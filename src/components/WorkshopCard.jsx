@@ -8,7 +8,7 @@ const WorkshopCard = ({data}) => {
         <Fragment>
             <div className="flex w-[300px] h-[300px] group p-2 relative">
                 <Image src={data?.logo} alt={"event"} width={300} height={300}
-                       className={"object-cover object-center  group-hover:scale-[0.85] transition duration-300 ease-in-out"}
+                       className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}
                 />
                 <WorkshopInfo position={2}/>
                 <WorkshopInfo position={3}/>
