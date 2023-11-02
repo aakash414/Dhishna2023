@@ -26,6 +26,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.2",
+    "react-glow": "^1.0.0",
     "react-split": "^2.0.14",
     "react-tilt": "^1.0.2",
     "recma-import-images": "0.0.3",

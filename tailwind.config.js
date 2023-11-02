@@ -31,7 +31,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@codaworks/react-glow/tailwind')
+    // require('@codaworks/react-glow/tailwind')
   ],
   
 }
