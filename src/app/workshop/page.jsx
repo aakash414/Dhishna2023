@@ -81,10 +81,9 @@ function Page() {
         <Fragment>
             <div className="flex items-center justify-center flex-wrap p-10 ">
                 {dummyData.map((item, index) => (
-                    <div className="m-3" key={index}><WorkshopCard /></div>
+                    <div className="m-3" key={index}><WorkshopCard/></div>
                 ))
                 }
-
             </div>
         </Fragment>
     );

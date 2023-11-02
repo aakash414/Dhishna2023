@@ -25,12 +25,13 @@ body {
 
 .clip-polygon1{
     clip-path: polygon(0 20%, 20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%) !important;
-    backdrop-filter: blur(10px) !important;
-    background-color: rgba(1, 1, 1, 0.5) !important;
+    backdrop-filter: blur(4px) !important;
+    background-color: rgba(124, 124, 124, 0.5) !important;
 }
 
 .clip-polygon2{
     clip-path: polygon(100% 20%, 80% 0, 0 0, 0 80%, 20% 100%, 100% 100%) !important;
-    backdrop-filter: blur(10px) !important;
-    background-color: rgba(1, 1, 1, 0.5) !important;
+    backdrop-filter: blur(4px) !important;
+    background-color: rgba(124, 124, 124, 0.5) !important;
 }
+
