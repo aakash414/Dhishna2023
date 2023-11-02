@@ -13,7 +13,7 @@ import clsx from 'clsx'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 import { Container } from '@/components/Container'
 import { SocialMedia } from '@/components/SocialMedia'
-import { logo } from '@/images/dhishna-logo.png'
+import Image from 'next/image'
 
 const RootLayoutContext = createContext(null)
 
@@ -57,15 +57,25 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
+          <Image src='/dhishna-white-logo.svg' alt="logo" className="md:hidden" width={100} height={100} />
 
         </Link>
-        <div className={ `text-white hidden  ${expanded ? 'md:hidden' : 'flex' } font-display text-2xl md:flex gap-16`}>
+
+        <div className={`text-white hidden  ${expanded ? 'md:hidden' : 'flex'} font-display text-2xl md:flex gap-16`}>
           <Link href='/'>Events</Link>
           <Link href='/about'>Workshop</Link>
           <Link href='/work'>Contact</Link>
         </div>
-        <div className="flex items-center gap-x-8">
-          {/* add logo here  */}
+        <div className="flex items-center gap-x-14">
+          <Link
+            href="/"
+            aria-label="Home"
+            onMouseEnter={() => setLogoHovered(true)}
+            onMouseLeave={() => setLogoHovered(false)}
+            className='md:block hidden'
+          >
+            <Image src='/dhishna-white-logo.svg' alt="logo" className="" width={100} height={100} />
+          </Link>
           <button
             ref={toggleRef}
             type="button"
@@ -156,67 +166,67 @@ function RootLayoutInner({ children }) {
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
-        <div
-          className="fixed left-0 right-0   z-40"
-          aria-hidden={expanded ? 'true' : undefined}
-          inert={expanded ? '' : undefined}
-        >
-          <Header
-            panelId={panelId}
-            icon={MenuIcon}
-            toggleRef={openRef}
-            expanded={expanded}
-            onToggle={() => {
-              setExpanded((expanded) => !expanded)
-              window.setTimeout(() =>
-                closeRef.current?.focus({ preventScroll: true }),
-              )
-            }}
-          />
-        </div>
+      <div
+        className="fixed left-0 right-0 top-2  z-40 pt-14"
+        aria-hidden={expanded ? 'true' : undefined}
+        inert={expanded ? '' : undefined}
+      >
+        <Header
+          panelId={panelId}
+          icon={MenuIcon}
+          toggleRef={openRef}
+          expanded={expanded}
+          onToggle={() => {
+            setExpanded((expanded) => !expanded)
+            window.setTimeout(() =>
+              closeRef.current?.focus({ preventScroll: true }),
+            )
+          }}
+        />
+      </div>
 
-        <motion.div
-          layout
-          id={panelId}
-          style={{ height: expanded ? 'auto' : '0.5rem' }}
-          className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
-          aria-hidden={expanded ? undefined : 'true'}
-          inert={expanded ? undefined : ''}
-        >
-          <motion.div layout className="bg-neutral-800">
-            <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
-              <Header
-                invert
-                panelId={panelId}
-                icon={XIcon}
-                toggleRef={closeRef}
-                expanded={expanded}
-                onToggle={() => {
-                  setExpanded((expanded) => !expanded)
-                  window.setTimeout(() =>
-                    openRef.current?.focus({ preventScroll: true }),
-                  )
-                }}
-              />
-            </div>
-            <Navigation />
-            <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-800">
-              <Container>
-                <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
+      <motion.div
+        layout
+        id={panelId}
+        style={{ height: expanded ? 'auto' : '0.5rem' }}
+        className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
+        aria-hidden={expanded ? undefined : 'true'}
+        inert={expanded ? undefined : ''}
+      >
+        <motion.div layout className="bg-neutral-800">
+          <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
+            <Header
+              invert
+              panelId={panelId}
+              icon={XIcon}
+              toggleRef={closeRef}
+              expanded={expanded}
+              onToggle={() => {
+                setExpanded((expanded) => !expanded)
+                window.setTimeout(() =>
+                  openRef.current?.focus({ preventScroll: true }),
+                )
+              }}
+            />
+          </div>
+          <Navigation />
+          <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-800">
+            <Container>
+              <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
 
-                  <div className="sm:border-l sm:border-transparent sm:pl-16">
-                    <h2 className="font-display text-base font-semibold text-white">
-                      Follow us
-                    </h2>
-                    <SocialMedia className="mt-6" invert />
-                  </div>
+                <div className="sm:border-l sm:border-transparent sm:pl-16">
+                  <h2 className="font-display text-base font-semibold text-white">
+                    Follow us
+                  </h2>
+                  <SocialMedia className="mt-6" invert />
                 </div>
-              </Container>
-            </div>
-          </motion.div>
+              </div>
+            </Container>
+          </div>
         </motion.div>
+      </motion.div>
 
-          <main className="w-full flex-auto">{children}</main>
+      <main className="w-full flex-auto">{children}</main>
 
     </MotionConfig>
   )
