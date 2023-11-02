@@ -10,6 +10,7 @@ import car from '../../images/car.png'
 import { GlowCapture,Glow } from '@codaworks/react-glow';
 
 
+
 function page() {  
         const dummyData = [
             {
@@ -44,6 +45,54 @@ function page() {
                 title: 'Case Study 2 Title',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...',
               },
+              {
+                href: '/case-study-2',
+                logo: car,
+                client: 'Client 2',
+                date: '2023-02-15',
+                title: 'Case Study 2 Title',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...',
+              },
+              {
+                href: '/case-study-2',
+                logo: car,
+                client: 'Client 2',
+                date: '2023-02-15',
+                title: 'Case Study 2 Title',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...',
+              },
+              {
+                href: '/case-study-2',
+                logo: car,
+                client: 'Client 2',
+                date: '2023-02-15',
+                title: 'Case Study 2 Title',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...',
+              },
+              {
+                href: '/case-study-2',
+                logo: car,
+                client: 'Client 2',
+                date: '2023-02-15',
+                title: 'Case Study 2 Title',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...',
+              },
+              {
+                href: '/case-study-2',
+                logo: car,
+                client: 'Client 2',
+                date: '2023-02-15',
+                title: 'Case Study 2 Title',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...',
+              },
+              {
+                href: '/case-study-2',
+                logo: car,
+                client: 'Client 2',
+                date: '2023-02-15',
+                title: 'Case Study 2 Title',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...',
+              },
     
             // Add more case studies as needed
           ];
@@ -60,28 +109,36 @@ function page() {
         }
     
     return (
-    <div className='bg-black relative event-bg '>
-     <  div className='h-screen w-32 flex flex-col items-end fixed top-0 left-0 ' >
-        <marquee
-          direction="down"
-          behavior="scroll"
-          scrollamount="20"
-          className='h-full'
-          loop='30'
-        >
-          <h1 className='text-6xl text-white transform -rotate-90 mt-8'>
-            <pre>
-              EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS
-            </pre>
-          </h1>
-          {/* Add more events as needed */}
-        </marquee>
+    <div className='bg-black relative event-bg flex flex-col justify-center items-center'>
+      <div class=" mt-26 text-white pt-32 flex justify-center items-center">
+        <span className='text-5xl font-bold'>E</span>
+        <span className='text-5xl font-bold'>V</span>
+        <div class="letter flex justify-center items-center mx-3">
+          <hr/>
+        </div>
+        <span className='text-5xl font-bold'>N</span>
+        <span className='text-5xl font-bold'>T</span>
+        <span className='text-5xl font-bold'>S</span>
       </div>
+      <div>
 
-
-    <GlowCapture>
-        <Glow color='purple'>
-        <Container className="mt-16 glow:text-glow/1 glow:bg-gray-800 glow:r text-black text-sm">
+      <div className='h-screen w-32 flex flex-col items-end fixed top-0 left-0 ' >
+          <marquee
+            direction="down"
+            behavior="scroll"
+            scrollamount="10"
+            className='h-full'
+           
+          >
+            <h1 className='text-6xl text-white transform -rotate-90 mt-8'>
+              <pre>
+                EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS
+              </pre>
+            </h1>
+            {/* Add more events as needed */}
+          </marquee>
+        </div>
+        <Container className="mt-4 glow:text-glow/1 glow:bg-gray-800 glow:r text-black text-sm">
         <FadeInStagger className="grid grid-cols-1  lg:grid-cols-3 p-36 gap-8">
           {dummyData.map((caseStudy) => (
             <div className='relative group' key={caseStudy.href}>
@@ -120,8 +177,6 @@ function page() {
           ))}
         </FadeInStagger>
       </Container>
-          </Glow>
-          </GlowCapture>
       <div className='h-screen w-32 flex flex-col items-end fixed top-0 right-0'>
         <marquee
           direction="up"
@@ -142,6 +197,7 @@ function page() {
       <div>
         
     </div>
+      </div>
     </div>
   )
 }
