@@ -6,7 +6,7 @@ import {FadeIn} from '@/components/FadeIn';
 import Link from 'next/link';
 import Image from 'next/image';
 import '@/styles/base.css'
-import WorkshopInfo from "@/components/WorkshopInfo";
+import WorkshopCard from "@/components/WorkshopCard";
 
 
 function Page() {
@@ -79,15 +79,14 @@ function Page() {
 
     return (
         <Fragment>
-            <div className="flex w-[300px] h-[300px] group p-2 relative">
-                <Image src={event} alt={"event"} width={300} height={300}
-                       className={"object-cover object-center rounded-lg shadow-lg  group-hover:shadow-xl group-hover:scale-90 transition duration-300 ease-in-out"}
-                />
-                <WorkshopInfo position={2}/>
+            <div className="flex items-center justify-center flex-wrap p-10 ">
+                {dummyData.map((item, index) => (
+                    <div className="m-3" key={index}><WorkshopCard /></div>
+                ))
+                }
+
             </div>
         </Fragment>
-
-
     );
 }
 
