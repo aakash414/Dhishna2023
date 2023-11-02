@@ -32,74 +32,74 @@ function XIcon(props) {
   )
 }
 
-function MenuIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path d="M2 6h20v2H2zM2 16h20v2H2z" />
-    </svg>
-  )
-}
+// function MenuIcon(props) {
+//   return (
+//     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+//       <path d="M2 6h20v2H2zM2 16h20v2H2z" />
+//     </svg>
+//   )
+// }
 
-function Header({
-  panelId,
-  icon: Icon,
-  expanded,
-  onToggle,
-  toggleRef,
-  invert = false,
-}) {
-  let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
+// function Header({
+//   panelId,
+//   icon: Icon,
+//   expanded,
+//   onToggle,
+//   toggleRef,
+//   invert = false,
+// }) {
+//   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
 
-  return (
-    <Container>
-      <div className="flex items-center justify-between">
-        <Link
-          href="/"
-          aria-label="Home"
-          onMouseEnter={() => setLogoHovered(true)}
-          onMouseLeave={() => setLogoHovered(false)}
-        >
-          <Logomark
-            className="h-8 sm:hidden"
-            invert={invert}
-            filled={logoHovered}
-          />
-          <Logo
-            className="hidden h-8 sm:block"
-            invert={invert}
-            filled={logoHovered}
-          />
-        </Link>
-        <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
-            Contact us
-          </Button>
-          <button
-            ref={toggleRef}
-            type="button"
-            onClick={onToggle}
-            aria-expanded={expanded ? 'true' : 'false'}
-            aria-controls={panelId}
-            className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
-              invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
-            )}
-            aria-label="Toggle navigation"
-          >
-            <Icon
-              className={clsx(
-                'h-6 w-6',
-                invert
-                  ? 'fill-white group-hover:fill-neutral-200'
-                  : 'fill-neutral-950 group-hover:fill-neutral-700',
-              )}
-            />
-          </button>
-        </div>
-      </div>
-    </Container>
-  )
-}
+//   return (
+//     <Container>
+//       <div className="flex items-center justify-between">
+//           {/* <Link
+//             href="/"
+//             aria-label="Home"
+//             onMouseEnter={() => setLogoHovered(true)}
+//             onMouseLeave={() => setLogoHovered(false)}
+//           > */}
+//           {/* <Logomark
+//             className="h-8 sm:hidden"
+//             invert={invert}
+//             filled={logoHovered}
+//           /> */}
+//           {/* <Logo
+//             className="hidden h-8 sm:block"
+//             invert={invert}
+//             filled={logoHovered}
+//           /> */}
+//         {/* </Link> */}
+//         <div className="flex items-center gap-x-8">
+//           <Button href="/contact" invert={invert}>
+//             Contact us
+//           </Button>
+//           <button
+//             ref={toggleRef}
+//             type="button"
+//             onClick={onToggle}
+//             aria-expanded={expanded ? 'true' : 'false'}
+//             aria-controls={panelId}
+//             className={clsx(
+//               'group -m-2.5 rounded-full p-2.5 transition',
+//               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
+//             )}
+//             aria-label="Toggle navigation"
+//           >
+//             <Icon
+//               className={clsx(
+//                 'h-6 w-6',
+//                 invert
+//                   ? 'fill-white group-hover:fill-neutral-200'
+//                   : 'fill-neutral-950 group-hover:fill-neutral-700',
+//               )}
+//             />
+//           </button>
+//         </div>
+//       </div>
+//     </Container>
+//   )
+// }
 
 function NavigationRow({ children }) {
   return (
@@ -171,7 +171,7 @@ function RootLayoutInner({ children }) {
           aria-hidden={expanded ? 'true' : undefined}
           inert={expanded ? '' : undefined}
         >
-          <Header
+          {/* <Header
             panelId={panelId}
             icon={MenuIcon}
             toggleRef={openRef}
@@ -182,7 +182,7 @@ function RootLayoutInner({ children }) {
                 closeRef.current?.focus({ preventScroll: true }),
               )
             }}
-          />
+          /> */}
         </div>
 
         <motion.div
@@ -194,7 +194,7 @@ function RootLayoutInner({ children }) {
           inert={expanded ? undefined : ''}
         >
           <motion.div layout className="bg-neutral-800">
-            <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
+            {/* <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
               <Header
                 invert
                 panelId={panelId}
@@ -208,7 +208,7 @@ function RootLayoutInner({ children }) {
                   )
                 }}
               />
-            </div>
+            </div> */}
             <Navigation />
             <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-800">
               <Container>
@@ -264,7 +264,7 @@ export function RootLayout({ children }) {
   let [logoHovered, setLogoHovered] = useState(false)
 
   return (
-    <RootLayoutContext.Provider value={{ logoHovered, setLogoHovered }}>
+    <RootLayoutContext.Provider >
       <RootLayoutInner key={pathname}>{children}</RootLayoutInner>
     </RootLayoutContext.Provider>
   )
