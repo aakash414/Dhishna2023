@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function Layout({ children }) {
   return (
-    <html lang="en" className="h-full bg-black text-base antialiased">
+    <html lang="en" className="h-full bg-black antialiased">
       <body className="flex min-h-full flex-col">
         <RootLayout>{children}</RootLayout>
       </body>

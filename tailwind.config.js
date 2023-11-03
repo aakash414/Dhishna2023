@@ -29,6 +29,12 @@ module.exports = {
         ],
       },
     },
+    backgroundImage: {
+      "vector": "url('./src/images/D2023.png')",
+    },
   },
-  plugins: [],
+  plugins: [
+    // require('@codaworks/react-glow/tailwind')
+  ],
+  
 }
