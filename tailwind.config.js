@@ -19,6 +19,16 @@ module.exports = {
         },
     plugins: [],
     extend: {
+        keyframes: {
+            shine: {
+                to: {
+                    backgroundPosition: '200% center',
+                },
+            },
+        },
+        animation: {
+            shine: 'shine 1s linear infinite',
+        },
       borderRadius: {
         '4xl': '2.5rem',
       },
@@ -26,8 +36,10 @@ module.exports = {
         sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
         display: [
           ['Mona Sans', ...defaultTheme.fontFamily.sans],
-          { fontVariationSettings: '"wdth" 125' },
+          { fontVariationSettings: '"width" 125' },
         ],
+        thunder: ['Thunder', 'sans'],
+        satoshi: ['Satoshi', 'sans'],
       },
     },
     backgroundImage: {
