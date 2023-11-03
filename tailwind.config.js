@@ -17,27 +17,24 @@ module.exports = {
             '6xl': ['3rem', {lineHeight: '3.5rem'}],
             '7xl': ['4rem', {lineHeight: '4.5rem'}],
         },
-        extend: {
-            borderRadius: {
-                '4xl': '2.5rem',
-            },
-            fontFamily: {
-                sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
-                display: [
-                    ['Mona Sans', ...defaultTheme.fontFamily.sans],
-                    {fontVariationSettings: '"wdth" 125'},
-                ],
-            },
-            keyframes: {
-                fade: {
-                    from: { opacity: 0, transform: 'translateY(20px)'},
-                    to: { opacity: 1, transform: 'translateY(0)'}
-                }
-            },
-            animation: {
-                fade: 'fade 0.2s ease-out'
-            }
-        }
-    },
     plugins: [],
+    extend: {
+      borderRadius: {
+        '4xl': '2.5rem',
+      },
+      fontFamily: {
+        sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
+        display: [
+          ['Mona Sans', ...defaultTheme.fontFamily.sans],
+          { fontVariationSettings: '"wdth" 125' },
+        ],
+      },
+    },
+    backgroundImage: {
+      "vector": "url('./src/images/D2023.png')",
+    },
+  },
+  plugins: [
+    // require('@codaworks/react-glow/tailwind')
+  ],
 }
