@@ -1,15 +1,40 @@
 @tailwind base;
 
 @font-face {
-  font-family: 'Mona Sans';
-  font-weight: 200 900;
-  font-display: block;
-  font-style: normal;
-  font-stretch: 75% 125%;
-  src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
+    font-family: 'Mona Sans';
+    font-weight: 200 900;
+    font-display: block;
+    font-style: normal;
+    font-stretch: 75% 125%;
+    src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
 }
 
 body {
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+            to right,
+            #434343,
+            #000000
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+            to right,
+            #434343,
+            #000000
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.clip-polygon1{
+    clip-path: polygon(0 15%, 15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%) !important;
+    backdrop-filter: blur(4px) !important;
+    background-color: rgba(124, 124, 124, 0.5) !important;
+}
+
+.clip-polygon2{
+    clip-path: polygon(100% 15%, 85% 0, 0 0, 0 85%, 15% 100%, 100% 100%) !important;
+    backdrop-filter: blur(4px) !important;
+    background-color: rgba(124, 124, 124, 0.5) !important;
+}
+=======
   background: #000000; /* fallback for old browsers */
 
   scroll-behavior: smooth; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -109,7 +134,4 @@ hr{
 	0%,30%{ width: 40px; }
 	70%,100%{ width: 30vw; }
 }
-
-
-
 
