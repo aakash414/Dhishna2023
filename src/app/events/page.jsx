@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Tilt } from 'react-tilt'
 import car from '../../images/car.png'
-import { GlowCapture,Glow } from '@codaworks/react-glow';
+// import { GlowCapture,Glow } from '@codaworks/react-glow';
 
 
 
