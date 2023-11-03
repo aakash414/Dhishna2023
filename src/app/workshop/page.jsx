@@ -1,3 +1,4 @@
+"use client"
 import React, {Fragment} from 'react';
 import {Container} from '@/components/Container';
 import {FadeInStagger} from '@/components/FadeIn';
@@ -7,9 +8,27 @@ import Link from 'next/link';
 import Image from 'next/image';
 import '@/styles/base.css'
 import WorkshopCard from "@/components/WorkshopCard";
+import client from '../../client';
 
 
 function Page() {
+    const [data, setData] = React.useState(null)
+    React.useEffect(() => {
+        client.fetch(`*[_type == "workshop"]{
+          title,
+          event_type,
+          event_code,
+          event_pay_type,
+          icon,
+          details,
+          price,
+          register
+        }`).then((data) => {
+          setData(data)
+          console.log(data)
+          
+        }).catch(console.error)
+      }, [])
     const dummyData = [
         {
             href: '/case-study-1',
