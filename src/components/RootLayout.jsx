@@ -62,9 +62,9 @@ function Header({
         </Link>
 
         <div className={`text-white hidden  ${expanded ? 'md:hidden' : 'flex'} font-display text-2xl md:flex gap-16`}>
-          <Link href='/'>Events</Link>
-          <Link href='/about'>Workshop</Link>
-          <Link href='/work'>Contact</Link>
+          <Link href='/events'>Events</Link>
+          <Link href='/workshop'>Workshop</Link>
+          <Link href='/contact'>Contact</Link>
         </div>
         <div className="flex items-center gap-x-14">
           <Link
@@ -167,7 +167,7 @@ function RootLayoutInner({ children }) {
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
       <div
-        className="fixed left-0 right-0 top-2  z-40 pt-14"
+        className="absolute left-0 right-0 top-2  z-40 pt-14"
         aria-hidden={expanded ? 'true' : undefined}
         inert={expanded ? '' : undefined}
       >
@@ -194,7 +194,7 @@ function RootLayoutInner({ children }) {
         inert={expanded ? undefined : ''}
       >
         <motion.div layout className="bg-neutral-800">
-          <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
+          <div ref={navRef} className=" pb-16 pt-14  z-10">
             <Header
               invert
               panelId={panelId}

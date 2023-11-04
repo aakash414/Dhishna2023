@@ -132,3 +132,31 @@ hr{
 	70%,100%{ width: 30vw; }
 }
 
+/* Default styles for smaller screens */
+.test {
+  font-size: 160px;
+  line-height: 7.5rem;
+  background: -webkit-linear-gradient(#FF7F09, #F61C0E);
+  -webkit-text-fill-color: transparent;
+}
+
+/* Media query for screens at least 768px wide */
+@media (min-width: 768px) {
+  .test {
+    font-size: 185px;
+    line-height: 8.85rem;
+  }
+}
+
+/* Media query for screens at least 1024px wide */
+@media (min-width: 1024px) {
+  .test {
+    font-size: 220px;
+    line-height: 10rem;
+  }
+}
+
+
+
+
+
