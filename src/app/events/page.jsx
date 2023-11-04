@@ -8,10 +8,30 @@ import Image from 'next/image';
 import { Tilt } from 'react-tilt'
 import car from '../../images/car.png'
 // import { GlowCapture,Glow } from '@codaworks/react-glow';
+import client from '@/client';
 
 
 
 function page() {  
+
+  const [data, setData] = React.useState(null)
+  React.useEffect(() => {
+      client.fetch(`*[_type == "events"]{
+        title,
+        event_type,
+        event_code,
+        event_pay_type,
+        icon,
+        details,
+        price,
+        register
+      }`).then((data) => {
+        setData(data)
+        console.log(data)
+        
+      }).catch(console.error)
+    }, [])
+
         const dummyData = [
             {
               href: '/case-study-1',
