@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import '@/styles/base.css'
 import WorkshopCard from "@/components/WorkshopCard";
+import Workshoptitle from "@/components/Workshopstitle"
 
 
 function Page() {
@@ -78,14 +79,21 @@ function Page() {
     ];
 
     return (
+      <div className=''> 
+       
         <Fragment>
-            <div className="flex items-center justify-center flex-wrap p-10 ">
+        <div className='ml-20 '>
+         <Workshoptitle/>
+        </div>
+            <div className="flex items-center  justify-center flex-wrap p-10 ">
+            
                 {dummyData.map((data, index) => (
                     <div className="m-3" key={index}><WorkshopCard data={data}/></div>
                 ))
                 }
             </div>
         </Fragment>
+        </div>
     );
 }
 
