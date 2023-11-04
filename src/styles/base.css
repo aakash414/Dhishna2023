@@ -132,7 +132,6 @@ hr{
 	70%,100%{ width: 30vw; }
 }
 
-/* Default styles for smaller screens */
 .test {
   font-size: 160px;
   line-height: 7.5rem;
@@ -140,7 +139,6 @@ hr{
   -webkit-text-fill-color: transparent;
 }
 
-/* Media query for screens at least 768px wide */
 @media (min-width: 768px) {
   .test {
     font-size: 185px;
@@ -148,13 +146,75 @@ hr{
   }
 }
 
-/* Media query for screens at least 1024px wide */
 @media (min-width: 1024px) {
   .test {
     font-size: 220px;
     line-height: 10rem;
   }
 }
+
+
+
+.circle {
+  position: absolute;
+  right:0%;
+  width: 30%;
+  top: 7%;
+  height: 600px;
+  padding-bottom: 20%; /* Maintain a 1:1 aspect ratio for the circle */
+  background: radial-gradient(circle at center, #AD13B2 50%, transparent 100%);
+  filter: blur(100px);
+  opacity: 0.7;
+}
+
+.ad13b2 {
+  background: radial-gradient(circle at center, #FF7F08 0%, transparent 100%);
+  right: 10%;
+}
+
+.hill {
+  position: absolute;
+  width: 60%;
+  height: 300px; /* Adjust the height as needed */
+  background: linear-gradient(to top, transparent 50%, #6B0269 50%, #6B0269); /* Use a darker shade of purple */
+  filter: blur(100px);
+  opacity: 0.7;
+  bottom: 0;
+}
+
+.hill::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 300px; /* Adjust the height as needed */
+  background: linear-gradient(to top, transparent 50%, #6B0269 50%, #6B0269); /* Use a darker shade of purple */
+  filter: blur(100px);
+  opacity: 1;
+  bottom: 0;
+}
+.hill2 {
+  position: absolute;
+  width: 55%;
+  height: 300px; /* Adjust the height as needed */
+  background: linear-gradient(to top, transparent 50%, #FF7F08 50%, #FF7F08); /* Use a darker shade of purple */
+  filter: blur(100px);
+  opacity: 0.7;
+  bottom: 0;
+  right: 0;
+}
+
+.hill2::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 300px; /* Adjust the height as needed */
+  background: linear-gradient(to top, transparent 50%, #FF7F08 50%, #FF7F08); /* Use a darker shade of purple */
+  filter: blur(100px);
+  opacity: 0.7;
+  right: 0;
+  bottom: 0;
+}
+
 
 
 

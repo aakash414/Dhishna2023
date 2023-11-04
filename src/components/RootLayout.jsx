@@ -83,7 +83,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
+              'md:hidden group -m-2.5 rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
@@ -193,7 +193,7 @@ function RootLayoutInner({ children }) {
         aria-hidden={expanded ? undefined : 'true'}
         inert={expanded ? undefined : ''}
       >
-        <motion.div layout className="bg-neutral-800">
+        <motion.div layout className="bg-black">
           <div ref={navRef} className=" pb-16 pt-14  z-10">
             <Header
               invert
