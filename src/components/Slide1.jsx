@@ -3,13 +3,14 @@ import React from 'react'
 export function Slide1() {
   return (
     <div className='relative text-white h-[100vh]'>
+              <div class="circle"></div>
+        <div class="circle ad13b2  "></div>
+      
       <div className='absolute opacity-60'>
-        <img src= '/Dhishna.png' alt="Dhishna"  className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] '/>
-        {/* <div className=' font-bold test '>DHIS<br/>HNA</div> */}
-        
+        <img src='/Dhishna.png' alt="Dhishna" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] ' />
       </div>
       <div className='absolute flex justify-center items-center h-full w-full opacity-60'>
-        <p className='font-bold test italic bg-clip-text bg-gradient-to-r from-yellow-500 to-red-500 p-8'>20<br/>&nbsp;23</p>
+        <p className='font-bold test italic bg-clip-text bg-gradient-to-r from-yellow-500 to-red-500 p-8'>20<br />&nbsp;23</p>
 
       </div>
       <div className='relative h-full w-full flex items-end p-10'>
