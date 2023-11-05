@@ -98,7 +98,7 @@ function Page() {
     ];
 
     return (
-      <div className=''> 
+      <div className='bg-black'> 
        
         <Fragment>
         <div className='ml-20 '>
