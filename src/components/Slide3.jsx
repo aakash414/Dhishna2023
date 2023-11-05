@@ -2,9 +2,9 @@ import React from 'react'
 
 export function Slide3() {
   return (
-    <div className="mt-[400px] flex h-[100vh] flex-col">
+    <div className=" flex flex-col">
       <div className="h-full">
-        <h1 className="font-500 min-tez  h-full w-full justify-center font-thunder italic text-white">
+        <h1 className="h-full w-full text-center font-thunder text-[550px] italic leading-none text-white">
           Events
         </h1>
       </div>
