@@ -5,7 +5,7 @@ export function Slide8() {
         // change font to thunder and fix size
         <div className='w-full h-full px-10 py-16'>
             <p className='text-white text-6xl sm:text-7xl text-center text-bold italic py-8'>ROBO GAMES</p>
-            <div className='flex flex-col sm:flex-row justify-between items-center h-full w-full gap-y-16'>
+            <div className='flex flex-col sm:flex-row justify-between items-center md:items-start h-full w-full gap-y-16'>
                 <div className='flex flex-1 items-end justify-end flex-col gap-16'>
                     <div className='bg-[#FF7F08] w-48 h-12 -skew-x-[40deg] '>
                         <div className='bg-black w-48 h-12 -mt-[0.1rem] -ml-[0.2rem] relative hover:-translate-x-4 hover:-translate-y-1'>
@@ -24,7 +24,7 @@ export function Slide8() {
                     </div>
 
                 </div>
-                <div className='md:flex flex-1 justify-center text-white hidden '>
+                <div className='md:flex w-2/5 justify-center text-white hidden '>
                     model here
                 </div>
                 <div className='flex flex-1 justify-start flex-col gap-16'>
