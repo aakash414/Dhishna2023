@@ -3,9 +3,9 @@ import Marquee from 'react-fast-marquee';
 
 export function Slide7() {
   return (
-    <div className='py-16 relative h-screen overflow-hidden'>
+    <div className='py-8 relative h-screen overflow-hidden'>
       <div className='absolute w-full h-full flex items-center justify-center'>
-        <p className='text-white text-4xl sm:text-2xl text-center text-semibold -translate-y-28 px-4 py-1 bg-[#AD13B2] font-
+        <p className='text-white text-4xl sm:text-2xl text-center text-semibold -translate-y-32 px-2  bg-[#AD13B2] font-
 Satoshi'>
           WORKSHOPS
         </p>
