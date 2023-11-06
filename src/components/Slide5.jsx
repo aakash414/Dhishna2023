@@ -5,10 +5,21 @@ import Image from 'next/image'
 export function Slide5() {
     return (
         <div className=' relative w-full h-full md:h-screen'>
-            <div className='flex w-full'>
-                <div className='flex flex- mx-auto justify-center items-center'>
-                    <div></div>
-                    dsg
+            <div className='flex w-full flex-col'>
+                <div className='flex flex-col mx-auto justify-center items-center'>
+                    <div className='bg-white w-20 h-10'> realme image here</div>
+                    <p className='text-white text-7xl sm:text-[120px] text-center font-bold italic py-8 font-thunder'>PRO SHOW</p>
+                </div>
+                <div className='flex flex-col md:flex-row mx-auto justify-center items-center py-16'>
+                    <div className='flex w-full md:w-1/2 h-full justify-center md:justify-end'>
+                        <div className='flex w-3/4'>
+                            <p className='text-base text-white font-normal leading-6 font-satoshi text-justify md:text-left'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum pretium semper. Suspendisse potenti. Morbi quam leo, viverra sed porta vitae, elementum vel massa. Morbi sed molestie velit, viverra pretium lacus. Proin eu malesuada odio, id rutrum arcu. Proin condimentum, mi eget pharetra porta, dui neque varius tellus, ut posuere turpis velit ut neque. Sed sed nisi id arcu cursus ornare in quis purus. Donec sagittis sapien et turpis vehicula, vel bibendum elit accumsan.</p>
+                        </div>
+
+                    </div>
+                    <div className='flex flex-col w-full md:w-1/2 items-center py-10 px-8 md:px-24'>
+
+                    </div>
 
                 </div>
             </div>
