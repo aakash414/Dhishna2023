@@ -10,6 +10,7 @@ const WorkshopCard = ({data}) => {
                 <Image src={data?.logo} alt={"event"} width={300} height={300}
                        className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}
                 />
+                {/* <p className='text-white'>dsvbsdmjvb</p> */}
                 <WorkshopInfo position={2}/>
                 <WorkshopInfo position={3}/>
             </div>
