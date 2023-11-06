@@ -15,7 +15,7 @@
 
     const [data, setData] = useState(null)
 
-    let fetchcount=2
+    // let fetchcount=2
     useEffect(() => {
       client.fetch(`*[_type == "workshop"]`)
         .then((data) => {
@@ -26,7 +26,7 @@
         .catch((error) => {
           console.error("Error fetching data:", error);
         });
-    }, [fetchcount]);
+    }, []);
     
     
 

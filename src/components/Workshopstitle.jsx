@@ -8,14 +8,14 @@ const Page = () => {
       targets: '.my-path',
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
-      duration: 1500,
+      duration: 5500,
       delay: (el, i) => i * 250,
       direction: 'alternate',
       loop: true,
    
     begin: function() {
         document.querySelectorAll('.my-path').forEach(path => {
-          path.setAttribute('stroke', 'yellow');
+          path.setAttribute('stroke', 'white');
           path.setAttribute('stroke-width', '2');
         });
       }
