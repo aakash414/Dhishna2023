@@ -1,6 +1,16 @@
 @tailwind base;
 
 @font-face {
+  font-family: 'Thunder';
+  src: url('../fonts/OpenType-TT/Thunder-SemiBoldLC.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Variable.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Mona Sans';
     font-weight: 200 900;
     font-display: block;
@@ -34,7 +44,9 @@ body {
     backdrop-filter: blur(4px) !important;
     background-color: rgba(124, 124, 124, 0.5) !important;
 }
-  
+  /*background: #000000; !* fallback for old browsers *!*/
+
+  /*scroll-behavior: smooth; !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
 
 
 .event-bg {
