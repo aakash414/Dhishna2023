@@ -127,6 +127,8 @@ import client from '../../client';
 function Page() {
   const [data, setData] = useState([]);
 
+
+  
   useEffect(() => {
     client
       .fetch('*[_type == "workshop"]')
@@ -138,7 +140,7 @@ function Page() {
   console.log(data)
   return (
     <div className='bg-black'> 
-      <div className='ml-20 '>
+      <div className='ml-20  '>
         <Workshoptitle/>
       </div>
       <div className="flex items-center  justify-center flex-wrap p-10 ">
