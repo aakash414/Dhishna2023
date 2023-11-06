@@ -39,6 +39,7 @@ module.exports = {
           { fontVariationSettings: '"width" 125' },
         ],
         thunder: ['Thunder', 'sans'],
+        thunder1: ['Thunder1', 'sans'],
         satoshi: ['Satoshi', 'sans'],
       },
     },
