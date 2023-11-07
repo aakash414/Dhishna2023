@@ -42,12 +42,12 @@ function Header({
   toggleRef,
   invert = false,
 }) {
-  let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
-  const pathname = window.location.pathname;
-  console.log('pathname',pathname, pathname === "/events")
-  if (pathname === "/events") {
-    return <div className='hidden'></div>;
-  }
+  // let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
+  // const pathname = window.location.pathname;
+  // console.log('pathname',pathname, pathname === "/events")
+  // if (pathname === "/events") {
+  //   return <div className='hidden'></div>;
+  // }
   return (
     <Container>
       <div className="flex items-center justify-between">
