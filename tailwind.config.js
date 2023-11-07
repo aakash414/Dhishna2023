@@ -17,7 +17,6 @@ module.exports = {
       '6xl': ['3rem', { lineHeight: '3.5rem' }],
       '7xl': ['4rem', { lineHeight: '4.5rem' }],
     },
-    plugins: [],
     extend: {
       keyframes: {
         shine: {
@@ -47,6 +46,8 @@ module.exports = {
     },
   },
   plugins: [
-    // require('@codaworks/react-glow/tailwind')
+    require("daisyui"),
+    // ... other plugins
   ],
+
 }

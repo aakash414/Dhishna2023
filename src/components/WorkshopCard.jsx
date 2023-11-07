@@ -46,14 +46,14 @@ const WorkshopCard = ({data}) => {
                 /> */}
                
                 {/* <img src={urlFor(data.icon).width(200).url()} className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}/> */}
-                {/* <img src={urlFor(data.icon).width(300).height(300).url()} className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}/> */}
-                <Image
+                <img src={urlFor(data.icon).width(300).height(300).url()} className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}/>
+                {/* <Image
                 src={urlFor(data?.icon)}
                 alt='vwvr'
                 width={300}
                 height={300}
                 className={"object-cover object-center group-hover:scale-90 transition duration-300 ease-in-out"}
-                />
+                /> */}
                 <p className="text-white ">{data?.details}</p>
                 <WorkshopInfo position={2}/>
                 <WorkshopInfo position={3}/>
