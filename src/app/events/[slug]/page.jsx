@@ -1,29 +1,41 @@
 import React from 'react'
 import miniDebConfLogo from '../../../images/miniDebConf.png'
 import Image from 'next/image'
-// import { useRouter } from 'next/navigation'
+import client from '../../../client'
 
-//store the data of each events such as image link, heading, title, description, date, time, venue as object
 
-function page() {
-    // //fetch the id which is the slug of the event
-    // const router = useRouter()
-    // const { slug } = router.query
 
-    const eventsData = [
-        {
-            imageLink: miniDebConfLogo,
-            heading: "Company values",
-            title: "On a mission to empower remote teams",
-            para1: "Faucibus commodo massa rhoncus, volutpat. Dignissim sed egetrisus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.  Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id",
-            para2: "Faucibus commodo massa rhoncus, volutpat. Dignissim sed egetrisus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.  Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id",
-            para3: "Faucibus commodo massa rhoncus, volutpat. Dignissim sed egetrisus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.  Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id",
-            date: "2023-11-15",
-            time: "10:00 AM - 2:00 PM",
-            venue: "Seminar Hall",
+export async function getServerSideProps(context) {
+    // Fetch event data from Sanity based on the dynamic slug
+    const { slug } = context.params;
 
-        }
-    ]
+    const query = `*[_type == "event" && slug.current == $slug][0] {
+    imageLink,
+    heading,
+    title,
+    para1,
+    para2,
+    para3,
+    date,
+    fee,
+    venue
+  }`;
+
+    const eventData = await client.fetch(query, { slug });
+
+    if (!eventData) {
+        return {
+            notFound: true, // Handle not found events
+        };
+    }
+
+    return {
+        props: { eventData },
+    };
+}
+
+function page({eventData}) {
+
 
     return (
         <div className=" py-24 sm:py-32">
@@ -39,22 +51,12 @@ function page() {
                         </div>
                         <div>
                             <div className="text-base leading-7 text-gray-300 lg:max-w-lg">
-                                <p className="text-base font-satoshi font-semibold leading-7 text-orange-600">MiniDebConf</p>
-                                <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-300 sm:text-4xl">On a
-                                    mission to empower remote teams</h1>
+                                <p className="text-base font-satoshi font-semibold leading-7 text-orange-600">{eventData.heading}</p>
+                                <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-300 sm:text-4xl">{eventData.title}</h1>
                                 <div className="max-w-xl">
-                                    <p className="mt-6">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis
-                                        odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt
-                                        ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas.
-                                        Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.   </p>
-                                    <p className="mt-8">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis
-                                        odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt
-                                        ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas.
-                                        Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p>
-                                    <p className="mt-8">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis
-                                        odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt
-                                        ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas.
-                                        Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p>
+                                    <p className="mt-6">{eventData.para1} </p>
+                                    <p className="mt-8">{eventData.para2}</p>
+                                    <p className="mt-8">{eventData.para3}</p>
                                 </div>
                             </div>
                             <dl className="mt-8 grid grid-cols-2 gap-8 border-t border-gray-300/10 pt-10 sm:grid-cols-4 font-satoshi">
@@ -64,15 +66,15 @@ function page() {
                                 </div>
                                 <div>
                                     <dt className="text-sm font-semibold leading-6 text-gray-300">Date</dt>
-                                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">25 Nov</dd>
+                                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">eventData.date</dd>
                                 </div>
                                 <div>
                                     <dt className="text-sm font-semibold leading-6 text-gray-300">Fee</dt>
-                                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">499</dd>
+                                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">{eventData.fee}</dd>
                                 </div>
                                 <div>
                                     <dt className="text-sm font-semibold leading-6 text-gray-300">Venue</dt>
-                                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">Old Soe</dd>
+                                    <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">{eventData.venue}</dd>
                                 </div>
                             </dl>
                         </div>
