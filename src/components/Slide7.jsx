@@ -1,5 +1,8 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
+import Rect1 from '../images/Rectangle7.png';
+import Rect2 from '../images/Rectangle8.png';
+import Image from 'next/image';
 
 export function Slide7() {
   return (
@@ -9,31 +12,33 @@ export function Slide7() {
 Satoshi'>
           WORKSHOPS
         </p>
-        <div className='absolute w-full transform -skew-y-12 font-Thunder  italic font-weight-500'>
+        <div className='absolute w-full transform -skew-y-12 font-Thunder  italic font-weight-500 text-4xl font-bold whitespace-pre'>
           <Marquee
-            speed={50}
+            speed={40}
             gradient={false}
-            autoFill={true}
+            autoFill={false}
             pauseOnHover={false}
             pauseOnClick={true}
             className='text-[#020202] bg-[#FF7F08] w-screen  py-2'
           >
-            Workshops and events
+            CHECK OUT OUR WORKSHOPS & LECTURES     CHECK OUT OUR WORKSHOPS & LECTURES      CHECK OUT OUR WORKSHOPS & LECTURES     CHECK OUT OUR WORKSHOPS & LECTURES  
           </Marquee>
         </div>
-        <div className='absolute w-full transform skew-y-12 font-Thunder  italic font-weight-500 py-8'>
+        <div className='absolute w-full transform skew-y-12 font-Thunder font-weight-500 text-4xl font-bold whitespace-pre'>
           <Marquee
-            speed={50}
+            speed={40}
             gradient={false}
-            autoFill={true}
-            direction={"right"}
+            autoFill={false}
+            direction='right'
             pauseOnHover={false}
             pauseOnClick={true}
             className='text-white bg-[#AD13B2] w-screen py-2'
           >
-            Workshops and events
-          </Marquee>
+              CHECK OUT OUR WORKSHOPS & LECTURES     CHECK OUT OUR WORKSHOPS & LECTURES      CHECK OUT OUR WORKSHOPS & LECTURES     CHECK OUT OUR WORKSHOPS & LECTURES  
+          
+            </Marquee>
         </div>
+       
       </div>
     </div>
   );
