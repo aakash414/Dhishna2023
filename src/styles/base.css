@@ -6,6 +6,12 @@
 }
 
 @font-face {
+  font-family: 'Thunder1';
+  src: url('../fonts/OpenType-TT/Thunder-BoldLC.ttf') format('truetype');
+}
+
+
+@font-face {
   font-family: 'Satoshi';
   src: url('../fonts/Satoshi-Variable.ttf') format('truetype');
 }
@@ -151,6 +157,7 @@ hr{
   -webkit-text-fill-color: transparent;
 }
 
+
 @media (min-width: 768px) {
   .test {
     font-size: 185px;
@@ -182,6 +189,24 @@ hr{
 .ad13b2 {
   background: radial-gradient(circle at center, #FF7F08 0%, transparent 100%);
   right: 10%;
+}
+
+.circle1 {
+  position: absolute;
+  right:10%;
+  width: 16%;
+  height: 20%;
+  bottom: 7%;
+  padding-bottom: 20%; /* Maintain a 1:1 aspect ratio for the circle */
+  background: radial-gradient(circle at center, #AD13B2 50%, transparent 100%);
+  filter: blur(100px);
+  opacity: 0.7;
+  transform: skewX(-30deg)
+}
+
+.ad13b {
+  background: radial-gradient(circle at center, #FF7F08 0%, transparent 100%);
+  right: 20%;
 }
 
 .hill {
@@ -261,5 +286,10 @@ hr{
 
 
 
+.outline{
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  font-weight: bolder;
+}
 
 
