@@ -1,6 +1,11 @@
 import React from 'react'
 import line from '../images/line.png'
 import Image from 'next/image'
+import Wheel from '../images/wheel2.png'
+import styles from '../styles/rotate.css'
+
+
+
 
 export function Slide4() {
     return (
@@ -16,8 +21,15 @@ export function Slide4() {
                 <div className="circle1"></div>
                 <div className="circle1 ad13b  "></div>
             </div>
-            <div className='flex  flex-1 justify-center lg:justify-end items-center h-full sm:min-h-screen  py-16 md:px-24' >
+            {/* <div className='flex flex-row'>
+            <div className='flex flex-row'>
+            <div className={`ralative flex justify-center items-center transform -translate-x-[200px]`}>
+                <Image src={Wheel} height={400} width={400} className='animate-spin duration-100 ease-in '/>
+            </div>
+            <div className='flex justify-center lg:justify-end items-center h-full sm:min-h-screen  py-16 md:px-24' >
+
                 <div className='text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8  md:gap-6'>
+
                     <p className='text-7xl  md:text-[120px] font-bold  text-center md:text-left font-thunder tracking-wide italic'>
                         CHAKRA
                     </p>
@@ -27,14 +39,47 @@ export function Slide4() {
                     <p className='text-sm md:text-base font-normal leading-6 font-satoshi text-justify md:text-left py-2 md:py-6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum pretium semper. Suspendisse potenti. Morbi quam leo, viverra sed porta vitae, elementum vel massa. Morbi sed molestie velit, viverra pretium lacus. Proin eu malesuada odio, id rutrum arcu. Proin condimentum, mi eget pharetra porta, dui neque varius tellus, ut posuere turpis velit ut neque. Sed sed nisi id arcu cursus ornare in quis purus. Donec sagittis sapien et turpis vehicula, vel bibendum elit accumsan.</p>
                 </div>
             </div>
+            </div>
+            
+            </div>
             <div className='hidden lg:flex  flex-1 opacity-50  h-full sm:min-h-screen py-56 ' >
                 <p className=' text-5xl sm:text-6xl  md:text-[120px] font-bold  text-center md:text-left font-thunder tracking-wide italic drop-shadow outline'>
                     CHAKRA
                 </p>
             </div>
+         
 
-
-        </div>
+        </div> */}
+        <div className="flex flex-row">
+  <div className="flex flex-row w-2/3"> {/* Divide equally */}
+    <div className="relative flex justify-center items-center transform -translate-x-[200px]">
+      <Image src={Wheel} height={400} width={500} className="animate-spin duration-100 ease-in" />
+    </div>
+    <div className="flex justify-center lg:justify-end items-center h-full sm:min-h-screen py-16 md:px-24">
+      <div className="text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8 md:gap-6">
+        <p className="text-7xl md:text-[120px] font-bold text-center md:text-left font-thunder tracking-wide italic">
+          CHAKRA
+        </p>
+        <p className="text-xl md:text-2xl font-light leading-6 font-satoshi text-justify md:text-left">
+          MECHANICAL DEPARTMENT
+        </p>
+        <p className="text-sm md:text-base font-normal leading-6 font-satoshi text-justify md:text-left py-2 md:py-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum pretium semper. Suspendisse potenti.
+          Morbi quam leo, viverra sed porta vitae, elementum vel massa. Morbi sed molestie velit, viverra pretium lacus.
+          Proin eu malesuada odio, id rutrum arcu. Proin condimentum, mi eget pharetra porta, dui neque varius tellus, ut
+          posuere turpis velit ut neque. Sed sed nisi id arcu cursus ornare in quis purus. Donec sagittis sapien et turpis
+          vehicula, vel bibendum elit accumsan.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div className="hidden lg:flex flex-1 opacity-50 h-full sm:min-h-screen py-56">
+    <p className="text-5xl sm:text-6xl md:text-[120px] font-bold text-center md:text-left font-thunder tracking-wide italic drop-shadow outline">
+      CHAKRA
+    </p>
+  </div>
+</div>
+</div> 
     )
 }
 
