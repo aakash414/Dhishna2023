@@ -264,13 +264,23 @@ hr{
 
 .linear-wipe {
   text-align: center;
-  background: linear-gradient(to right, #bd4f10 20%, #eec8b5 40%, #bebe85 60%, #ffff00 80%);
+  background: linear-gradient(to right, #FF7F08 20%, #e6c8ac 40%, #e9c4ea 60%, #AD13B2 80%);
   background-size: 200% auto;
   color: #000;
   background-clip: text;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /*text-align: center;*/
+  /*display: inline-block;*/
+  /*font: bold 4.5em/1.5 Bebas, sans-serif;*/
+  /*color: #ff5029; !*non-webkit fallback*!*/
+  /*font-size: 100px;*/
+  /*text-transform: uppercase;*/
+  /*background: -webkit-linear-gradient( #ffb400, #eebb9b, #f0e391);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+  /*background-attachment: fixed;*/
 }
 
 .add-animation {
