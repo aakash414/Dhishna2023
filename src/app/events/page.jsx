@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { Container } from '@/components/Container';
 import { FadeInStagger } from '@/components/FadeIn';
 import { FadeIn } from '@/components/FadeIn';
-import Link from 'next/link';
+// import Link from 'next/link';
 import Image from 'next/image';
 import { Tilt } from 'react-tilt';
 import Eventscard from '@/components/Eventscard';
 import client from '@/client';
+import Link from 'next/link';
 import WorkshopCard from '@/components/WorkshopCard';
 
 function Page() {
@@ -81,11 +82,13 @@ function Page() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-10 md:p-42">
             {filteredData.map((event) => (
               event.icon && (
-                <div className='   md:p-10 justify-center items-center flex p-10' key={event.event_code}>
-                  <Tilt>
-                    <Eventscard event={event} />
-                  </Tilt>
-                </div>
+                <Link href={`/events/${event.event_code}`} key={event.event_code}>
+                  <div className='   md:p-10 justify-center items-center flex p-10' key={event.event_code}>
+                    <Tilt>
+                      <WorkshopCard data={event} />
+                    </Tilt>
+                  </div>
+                </Link>
               )
             ))}
           </div>
