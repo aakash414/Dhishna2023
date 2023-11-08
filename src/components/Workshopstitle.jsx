@@ -15,7 +15,7 @@ const Page = () => {
    
     begin: function() {
         document.querySelectorAll('.my-path').forEach(path => {
-          path.setAttribute('stroke', 'white');
+          path.setAttribute('stroke', 'gold');
           path.setAttribute('stroke-width', '2');
         });
       }

@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 import WorkshopCard from "@/components/WorkshopCard";
 import Workshoptitle from "@/components/Workshopstitle"
 import client from '../../client';
+import Link from 'next/link';
+
 
 function Page() {
   const [data, setData] = useState([]);
@@ -41,7 +43,9 @@ function Page() {
       <div className="flex items-center  justify-center flex-wrap p-10 ">
         {data.map((workshop, index) => (
           <div className="m-3" key={index}>
+             <Link href={`/workshop/${workshop.event_code}`}>
             <WorkshopCard data={workshop}/>
+            </Link>
           </div>
         ))}
       </div>
