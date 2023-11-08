@@ -11,7 +11,7 @@
 // import Eventscard from '@/components/Eventscard';
 // import client from '@/client';
 
-// function page() {  
+// function page() {
 
 //   const [data, setData] = useState(null)
 
@@ -27,8 +27,7 @@
 //         console.error("Error fetching data:", error);
 //       });
 //   }, [fetchcount]);
-  
-  
+
 
 //     console.log("data",data)
 //           const defaultOptions = {
@@ -48,7 +47,7 @@
 //           WebkitTextStrokeWidth: '1px',
 //           WebkitTextStrokeColor: 'white',
 //         };
-    
+
 //     return (
 //     <div className='bg-black relative event-bg flex flex-col justify-center items-center overflow-x-hidden'>
 //       <div className='h-30 w-screen flex justify-center items-center top-0 '>
@@ -63,7 +62,7 @@
 //           <span className='text-7xl font-bold'>S</span>
 //         </div>
 //       </div>
-//       <div className=''> 
+//       <div className=''>
 //       <form className='mt-10 flex justify-center items-center w-full relative pt-5'>
 //             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
 //             <div className="relative w-full flex justify-center items-center">
@@ -78,7 +77,7 @@
 //           </form>
 
 //           <div className="grid grid-cols-3 gap-4 p-36">
-//           {data && 
+//           {data &&
 //             data.map((event) => (
 //               event.icon && (
 //                 <div className='p-16 container'>
@@ -96,7 +95,7 @@
 //             behavior="scroll"
 //             scrollamount="5"
 //             className='h-full'
-           
+
 //           >
 //           <h1 className='text-6xl font-bold text-transparent transform -rotate-90 mt-2 relative ' style={h1Styles}>
 //             <pre className='text-white'>
@@ -129,7 +128,7 @@
 //       </div>
 
 //       <div>
-        
+
 //     </div>
 //       </div>
 //     </div>
@@ -142,16 +141,16 @@
 import React from 'react'
 
 function page() {
-  return (
-    <div class="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
-    <h1 class="text-5xl text-white font-bold mb-8 animate-pulse">
-        Coming Soon
-    </h1>
-    <p class="text-white text-lg mb-8">
-        We're working hard to bring you something amazing. Stay tuned!
-    </p>
-</div>
-  )
+    return (
+        <div class="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
+            <h1 class="text-5xl text-white font-bold mb-8 animate-pulse">
+                Coming Soon
+            </h1>
+            <p class="text-white text-lg mb-8">
+                We're working hard to bring you something amazing. Stay tuned!
+            </p>
+        </div>
+    )
 }
 
 export default page
