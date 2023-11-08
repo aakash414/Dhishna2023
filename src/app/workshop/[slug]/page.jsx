@@ -1,11 +1,21 @@
 "use client"
-import client from '@/client';
+import client from '../../../client';
 import React, { useEffect, useState } from 'react';
+import { imageUrlBuilder } from '@sanity/image-url';
+
 
 
 function Page() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    // const builder = imageUrlBuilder(client)
+
+    // function urlFor(source) {
+    //     return builder.image(source);
+    // }
+
+
 
     useEffect(() => {
         // Fetch the data from Sanity when the component mounts
@@ -76,7 +86,7 @@ function Page() {
                     data && (
                         <div className="mx-10 flex lg:flex-row flex-col justify-center items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none">
                             <div className="overflow-hidden h-fit w-auto rounded-3xl bg-gray-900 shadow-2xl">
-                                <img className="object-cover" src={data[0].icon} alt="" />
+                                {/*<img className="object-cover" src={urlFor(data[0].icon).width(500).height(300).url()} alt="" />*/}
                             </div>
                             <div>
                                 <div className="text-base leading-7 text-gray-300 lg:max-w-lg">

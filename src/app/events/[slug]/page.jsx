@@ -2,13 +2,13 @@
 import client from '@/client';
 import React, { useEffect, useState } from 'react';
 import { imageUrlBuilder } from '@sanity/image-url';
-import myConfiguredSanityClient from '@/sanityClient';
+// import myConfiguredSanityClient from '@/sanityClient';
 
 
 function Page() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
-    const builder = imageUrlBuilder(myConfiguredSanityClient)
+    const builder = imageUrlBuilder(client)
 
     function urlFor(source) {
         return builder.image(source)
