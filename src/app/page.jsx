@@ -1,5 +1,5 @@
 "use client"
-import React ,{ useState }  from 'react';
+import React, { useState } from 'react';
 import { Slide1 } from '@/components/Slide1';
 import { Slide2 } from '@/components/Slide2';
 import { Slide3 } from '@/components/Slide3';
@@ -12,11 +12,9 @@ import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
 
 
+function page() {
 
-function page() {  
 
-
-  const [cursorText, setCursorText] = useState("");
   const [cursorVariant, setCursorVariant] = useState("default");
 
   const ref = React.useRef(null);
@@ -39,15 +37,16 @@ function page() {
   const variants = {
     default: {
       opacity: 1,
-      height: 10,
-      width: 10,
+      height: 0,
+      width: 0,
       fontSize: "16px",
       x: mouseXPosition,
       y: mouseYPosition,
       transition: {
         type: "spring",
         mass: 0.6
-      }
+      },
+      cursor: "pointer"
     },
     chakra: {
       opacity: 1,
@@ -61,7 +60,7 @@ function page() {
     },
     workshop: {
       opacity: 1,
-      backgroundColor: "#FFBCBC",
+      backgroundColor: "#DE397D",
       color: "#000",
       height: 64,
       width: 64,
@@ -71,33 +70,34 @@ function page() {
     },
     proshow: {
       opacity: 1,
-      backgroundColor: "#FFBCBC",
+      backgroundColor: "#3280E1",
       color: "#000",
-      height: 64,
-      width: 64,
+      height: 72,
+      width: 72,
       fontSize: "32px",
       x: mouseXPosition - 48,
       y: mouseYPosition - 48
     },
     rocket: {
       opacity: 1,
-      backgroundColor: "#FFBCBC",
+      backgroundColor: "#28E024",
       color: "#000",
-      height: 64,
-      width: 64,
+      height: 90,
+      width: 90,
       fontSize: "32px",
       x: mouseXPosition - 48,
-      y: mouseYPosition - 48
+      y: mouseYPosition - 48,
+      cursor: "none"
     },
     robo: {
       opacity: 1,
-      backgroundColor: "#FFBCBC",
+      backgroundColor: "#28E024",
       color: "#000",
-      height: 64,
-      width: 64,
+      height: 90,
+      width: 90,
       fontSize: "32px",
       x: mouseXPosition - 48,
-      y: mouseYPosition - 48
+      y: mouseYPosition - 48,
     }
   };
 
@@ -108,85 +108,81 @@ function page() {
   };
 
   function chakraEnter(event) {
-    setCursorText("View");
     setCursorVariant("chakra");
   }
 
   function chakraLeave(event) {
-    setCursorText("");
+
     setCursorVariant("default");
   }
 
   function proshowEnter(event) {
-    setCursorText("👋");
+
     setCursorVariant("proshow");
   }
 
   function proshowLeave(event) {
-    setCursorText("");
+
     setCursorVariant("default");
   }
 
   function workshopEnter(event) {
-    setCursorText("👋");
+
     setCursorVariant("workshop");
   }
 
   function workshopLeave(event) {
-    setCursorText("");
+
     setCursorVariant("default");
   }
   function rocketEnter(event) {
-    setCursorText("👋");
+
     setCursorVariant("rocket");
   }
 
   function rocketLeave(event) {
-    setCursorText("");
-    setCursorVariant("default");
-  }function roboEnter(event) {
-    setCursorText("👋");
-    setCursorVariant("robo");
-  }
 
-  function roboLeave(event) {
-    setCursorText("");
     setCursorVariant("default");
   }
 
 
-    
-    return (
 
-    <div className='bg-black relative container' ref={ref}>
+  return (
+
+    <div className='bg-black relative' ref={ref}>
+      <Slide1 />
+      <Slide2 />
+      <Slide3 />
       <motion.div
         variants={variants}
         className="circle"
         animate={cursorVariant}
         transition={spring}
       >
-        <span className="cursorText">{cursorText}</span>
+        <p className="cursorText"></p>
+
       </motion.div>
-        <Slide1 />
-        <Slide2/>
-        <Slide3/>
+      <div className='container'>
         <div onMouseEnter={chakraEnter} onMouseLeave={chakraLeave}>
-        <Slide4/>
+          <Slide4 />
         </div>
         <div onMouseEnter={proshowEnter} onMouseLeave={proshowLeave}>
-        <Slide5/>
+          <Slide5 />
         </div>
         <div onMouseEnter={workshopEnter} onMouseLeave={workshopLeave}>
-        <Slide7/>
+          <Slide7 />
         </div>
-        <div onMOuseEnter={roboEnter} onMouseLeave={roboLeave}>
-        <Slide8/>
-        </div>
+      </div>
+      <Slide8 />
+      <div className='container'>
         <div onMouseEnter={rocketEnter} onMouseLeave={rocketLeave}>
-        <Slide9/>
+          <Slide9 />
         </div>
-
+      </div>
     </div>
+
+
+
 
   )
 }
