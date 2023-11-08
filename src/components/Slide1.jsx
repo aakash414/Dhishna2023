@@ -3,8 +3,8 @@ import React from 'react'
 export function Slide1() {
   return (
     <div className='relative text-white h-[100vh]'>
-              <div className="circle"></div>
-        <div className="circle ad13b2  "></div>
+              <div className="circle2"></div>
+        <div className="circle2 ad13b2  "></div>
       
       <div className='absolute opacity-70'>
         <img src='/Dhishna.png' alt="Dhishna" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] ' />
