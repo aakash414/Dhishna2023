@@ -25,7 +25,7 @@ export function Slide7() {
             setIsScrolling(true)
             setTimeout(() => {
                 setIsScrolling(false)
-            }, 100)
+            }, 300)
         };
 
         document.addEventListener('scroll', handleScroll);
