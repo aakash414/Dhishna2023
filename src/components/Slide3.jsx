@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Slide3() {
   return (
-    <div className=" flex flex-col">
+    <div className=" flex flex-col ">
       <div className="h-full  flex flex-col justify-center relative items-center">
         <a>
         <p className="font-satoshi font-normal absolute lg:top-20 md:top-12 top-2 text-sm lg:text-2xl xl:text-4xl xl:top-28  md:text-base text-white ">THE BIGGEST EVENTS HAPPENING IN KERALA</p>

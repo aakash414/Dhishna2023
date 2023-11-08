@@ -1,18 +1,20 @@
 "use client"
 import client from '@/client';
 import React, { useEffect, useState } from 'react';
-import { imageUrlBuilder } from '@sanity/image-url';
-// import myConfiguredSanityClient from '@/sanityClient';
+import imageUrlBuilder from '@sanity/image-url';
 
 
 function Page() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
-    const builder = imageUrlBuilder(client)
+
+    const builder = imageUrlBuilder(client);
 
     function urlFor(source) {
-        return builder.image(source)
+        console.log("source",source)
+        return builder.image(source);
     }
+
 
 
 
@@ -45,7 +47,7 @@ function Page() {
     const slug = window.location.href.split('/').pop();
     console.log("slug",slug);
 
-    console.log("data",data)
+    console.log("data123",data)
 
     useEffect(() => {
         // Fetch data of the event using the slug
@@ -68,6 +70,9 @@ function Page() {
             .catch(console.error);
     }, [slug]);
 
+    //test urlFor
+    console.log("data[0].icon",data[0].icon);
+
     return (
         <div className="py-24 sm:py-32">
             <div className="px-6 lg:px-8">
@@ -77,7 +82,7 @@ function Page() {
                     data && (
                         <div className="mx-10 flex lg:flex-row flex-col justify-center items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none">
                             <div className="overflow-hidden h-fit w-auto rounded-3xl bg-gray-900 shadow-2xl">
-                                <img className="object-cover" src={data[0].icon.asset.ref} alt="" />
+                                <img className="object-cover" src={urlFor(data[0].icon).width(300).height(300).url()} alt="" />
                             </div>
                             <div>
                                 <div className="text-base leading-7 text-gray-300 lg:max-w-lg">
@@ -105,13 +110,13 @@ function Page() {
                                     <div>
                                         <dt className="text-sm font-semibold leading-6 text-gray-300">Fee</dt>
                                         <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">
-                                            {data.price}
+                                            {data[0].price}
                                         </dd>
                                     </div>
                                     <div>
                                         <dt className="text-sm font-semibold leading-6 text-gray-300">Venue</dt>
                                         <dd className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-400">
-                                            {data.venue}
+                                            {data[0].venue}
                                         </dd>
                                     </div>
                                 </dl>
