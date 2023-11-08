@@ -7,7 +7,6 @@ import {Slide7} from '@/components/Slide7';
 import Slide4 from '@/components/Slide4';
 import Slide9 from '@/components/Slide9';
 import Slide5 from '@/components/Slide5';
-import Chakra from "@/components/Chakra";
 
 
 function page() {
