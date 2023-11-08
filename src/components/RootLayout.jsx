@@ -45,7 +45,7 @@ function Header({
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
   const pathname = window.location.pathname;
   console.log('pathname',pathname, pathname === "/events")
-  if (pathname === "/events") {
+  if (pathname === "/events" || pathname === "/workshop" ) {
     return <div className='hidden'></div>;
   }
   return (

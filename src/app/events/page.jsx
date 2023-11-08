@@ -1,13 +1,10 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { Container } from '@/components/Container';
-import { FadeInStagger } from '@/components/FadeIn';
-import { FadeIn } from '@/components/FadeIn';
 // import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Tilt } from 'react-tilt';
-import Eventscard from '@/components/Eventscard';
+// import Eventscard from '@/components/Eventscard';
 import client from '@/client';
 import Link from 'next/link';
 import WorkshopCard from '@/components/WorkshopCard';
@@ -92,8 +89,6 @@ function Page() {
               )
             ))}
           </div>
-
-
         <div className='h-screen w-full md:w-32 flex-col items-end fixed top-0 left-0 md:flex hidden'>
           <marquee
             direction="down"
