@@ -22,8 +22,8 @@ export function Slide2() {
             </div>
             <div>
 
-                <div class="hill"></div>
-                <div class="hill2"></div>
+                <div className="hill"></div>
+                <div className="hill2"></div>
             </div>
 
 

@@ -63,7 +63,6 @@ export default function Layout({ children }) {
                 ref={videoRef}
                 src="/full%20hero.mp4"
                 playsInline={true}
-                webkit-playsinline={true}
                 preload="auto"
                 muted="muted"
                 className="fixed top-0"

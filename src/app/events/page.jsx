@@ -51,10 +51,10 @@
 //     return (
 //     <div className='bg-black relative event-bg flex flex-col justify-center items-center overflow-x-hidden'>
 //       <div className='h-30 w-screen flex justify-center items-center top-0 '>
-//         <div class=" h-[30%] text-black p-20 flex justify-center items-center z-10 bg-white w-screen top-0 rounded-b-[30px] ">
+//         <div className=" h-[30%] text-black p-20 flex justify-center items-center z-10 bg-white w-screen top-0 rounded-b-[30px] ">
 //           <span className='text-7xl font-bold'>E</span>
 //           <span className='text-7xl font-bold'>V</span>
-//           <div class="letter flex justify-center items-center mx-3 top-0">
+//           <div className="letter flex justify-center items-center mx-3 top-0">
 //             <hr/>
 //           </div>
 //           <span className='text-7xl font-bold'>N</span>
@@ -142,11 +142,11 @@ import React from 'react'
 
 function page() {
     return (
-        <div class="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
-            <h1 class="text-5xl text-white font-bold mb-8 animate-pulse">
+        <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center">
+            <h1 className="text-5xl text-white font-bold mb-8 animate-pulse">
                 Coming Soon
             </h1>
-            <p class="text-white text-lg mb-8">
+            <p className="text-white text-lg mb-8">
                 We're working hard to bring you something amazing. Stay tuned!
             </p>
         </div>
