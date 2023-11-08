@@ -25,7 +25,7 @@ const Page = () => {
 
   return (
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-125 -100 790 200">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -100 790 200">
       <g className="lines">
         
       
