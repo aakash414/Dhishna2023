@@ -2,6 +2,7 @@
 import { RootLayout } from '@/components/RootLayout';
 import '@/styles/tailwind.css';
 import { useEffect, useRef } from "react";
+import "./style.css"
 
 export default function Layout({ children }) {
     const videoRef = useRef(null);
@@ -21,7 +22,7 @@ export default function Layout({ children }) {
         function playVideoBasedOnScroll(y) {
             const currentStageIndex = Math.max(Math.round(y / 200), 1);
 
-            console.log(currentStageIndex)
+            // console.log(currentStageIndex)
 
             if (currentStageIndex !== currentStage) {
                 currentStage = currentStageIndex;
@@ -60,7 +61,7 @@ export default function Layout({ children }) {
         <RootLayout>
             <video
                 ref={videoRef}
-                src="/hero.mkv"
+                src="/full%20hero.mp4"
                 playsInline={true}
                 webkit-playsinline={true}
                 preload="auto"
