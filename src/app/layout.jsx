@@ -44,7 +44,7 @@ export default function Layout({children}) {
 
         video.addEventListener("timeupdate", videoPlayed);
         return () => video.removeEventListener("timeupdate", videoPlayed);
-    }, [percent, lastPercent, videoRef]);
+    }, [percent, videoRef]);
 
     return (
         <html lang="en" className="h-full bg-black antialiased">
