@@ -7,14 +7,15 @@ import "./style.css"
 export default function Layout({children}) {
     const videoRef = useRef(null);
     const [percent, setPercent] = useState(0);
+    const [lastPercent, setLastPercent] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const y = window.scrollY;
             const height = document.body.clientHeight;
-            const percent = y / height;
+            const currentPercent = y / height;
 
-            setPercent(percent);
+            setPercent(currentPercent);
         };
         document.addEventListener("scroll", handleScroll);
 
@@ -26,13 +27,24 @@ export default function Layout({children}) {
 
         const video = videoRef.current;
         const stopTime = video.duration * percent;
+        const last = lastPercent;
+
+        setLastPercent(percent);
+
+        if (last > percent) {
+            video.pause();
+            video.currentTime = stopTime;
+            return;
+        }
+
+        console.log({percent, lastPercent, stopTime})
 
         const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
         video.play();
 
         video.addEventListener("timeupdate", videoPlayed);
         return () => video.removeEventListener("timeupdate", videoPlayed);
-    }, [percent, videoRef]);
+    }, [percent, lastPercent, videoRef]);
 
     return (
         <html lang="en" className="h-full bg-black antialiased">
