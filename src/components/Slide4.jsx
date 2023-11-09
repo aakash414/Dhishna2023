@@ -71,7 +71,7 @@ export function Slide4() {
             <div className="flex flex-row">
                 <div className="flex flex-row md:w-2/3 md:transform md:-translate-x-[200px]"> {/* Divide equally */}
                     <div className="md:relative absolute ` flex justify-center items-center  ">
-                        <Image src={Wheel} height={400} width={500} className="animate-spin  duration-100 ease-in hover:animate-pulse sm:display-hidden "/>
+                        <Image src={Wheel} height={400} width={500} className="animate-spin  duration-100 ease-in hover:animate-pulse sm:hidden md:flex "/>
                     </div>
                     <div
                         className="flex justify-center lg:justify-end items-center h-full sm:min-h-screen py-16 md:px-24">

@@ -8,12 +8,16 @@ export default function Layout({children}) {
     const videoRef = useRef(null);
     const [percent, setPercent] = useState(0);
     const [lastPercent, setLastPercent] = useState(0);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     useEffect(() => {
+        // console.log("kooooooooooi");
+
+        
         const handleScroll = () => {
             const y = window.scrollY;
             const height = document.body.clientHeight;
-            const currentPercent = y / height;
+            const currentPercent = y * 3 / height;
 
             setPercent(currentPercent);
         };
@@ -23,6 +27,8 @@ export default function Layout({children}) {
     }, []);
 
     useEffect(() => {
+        // console.log("kooooooooooi");
+        console.log({percent, lastPercent});
         if (!videoRef.current || percent === 0) return;
 
         const video = videoRef.current;
@@ -30,14 +36,26 @@ export default function Layout({children}) {
         const last = lastPercent;
 
         setLastPercent(percent);
+        if (percent > 1) {
+            setIsPlaying(false)
+        }
+        else {
+            setIsPlaying(true)
+        }
 
-        if (last > percent) {
+
+        // if (last > percent) {
+        //     video.pause();
+        //     video.currentTime = stopTime;
+        //     return;
+        // }
+        if( video.currentTime >= stopTime) {
+            console.log("..........................pause");
             video.pause();
-            video.currentTime = stopTime;
             return;
         }
 
-        console.log({percent, lastPercent, stopTime})
+        // console.log({percent, lastPercent, stopTime})
 
         const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
         video.play();
@@ -50,14 +68,15 @@ export default function Layout({children}) {
         <html lang="en" className="h-full antialiased">
         <body className="flex min-h-full flex-col">
         <RootLayout>
-            {/* <video
+            <video
                 ref={videoRef}
-                src="/raone.mp4"
+                src="/jeevan.mp4"
                 playsInline={true}
                 preload="eager"
                 muted={true}
+                loop={false}
                 className="fixed top-0 hidden md:block"
-            ></video> */}
+            ></video>
             {children}
         </RootLayout>
         </body>
