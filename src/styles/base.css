@@ -403,3 +403,18 @@ hr{
 .bounce {
   animation: up-down 2s infinite;
 }
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+video#video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+

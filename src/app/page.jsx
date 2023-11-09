@@ -10,6 +10,7 @@ import Slide9 from '@/components/Slide9';
 import Slide5 from '@/components/Slide5';
 import useMouse from "@react-hook/mouse-position";
 import {motion} from "framer-motion";
+import VideoBackground from '@/components/VideoBackground';
 
 
 function page() {
@@ -146,10 +147,13 @@ function page() {
         setCursorVariant("default");
     }
 
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
 
     return (
 
         <div className=' relative' ref={ref}>
+            {isMobile && <VideoBackground/>}
             <Slide1/>
             <Slide2/>
             <Slide3/>

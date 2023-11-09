@@ -1,5 +1,5 @@
 import React from 'react'
-import robo from '../images/RoboImage.png'
+import robo from '../images/RoboImage.svg'
 import Image from 'next/image'
 
 

@@ -3,6 +3,8 @@ import line1 from '../images/line1.png'
 import Image from 'next/image'
 import realme from '../images/realme.png'
 import Nikhita from '../images/Nikhita.png'
+import proshow from '../images/proshow.png'
+
 
 export function Slide5() {
     return (
@@ -25,9 +27,12 @@ export function Slide5() {
                             </div>
 
                         </div>
-                        <div className='flex w-full md:w-1/2'>
-
-                        </div>
+                            <div className='flex md:w-3/4 pr-36'>
+                                <div className='flex w-full h-full'>
+                                    <Image src={proshow} className='w-full h-full' />
+                                    {/* <div className='w-full bg-white z-[100]'>jhjhvhjhjy</div> */}
+                                </div>
+                            </div>
                     </div>
                     <Image src={line1} alt="line" className='hidden md:flex w-[400px] mx-auto py-10'/>
                 </div>
