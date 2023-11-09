@@ -346,7 +346,7 @@ hr{
 
 .linear-wipe {
   text-align: center;
-  background: linear-gradient(to right, #FF7F08 20%, #e6c8ac 40%, #e9c4ea 60%, #AD13B2 80%);
+  background: linear-gradient(to right,#e6c8ac 0%, #FF7F08 20%, #e6c8ac 40%, #e9c4ea 60%, #AD13B2 80%,#e9c4ea 100%);
   background-size: 200% auto;
   color: #000;
   background-clip: text;
@@ -387,6 +387,21 @@ hr{
 .rocketUp{
   animation: rocketUp 2s forwards cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
+@keyframes chakraRight {
+  from {
+    transform: translate(-750px,-400px);
+  }
+  to {
+    transform: translate(0,0); /* Adjust the distance as needed */
+
+  }
+}
+
+.chakraRight{
+  animation: chakraRight 2s forwards cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 
 
 @keyframes up-down {
