@@ -1,16 +1,38 @@
+"use client"
 import React from 'react'
 import line from '../images/line.png'
 import Image from 'next/image'
+import rocket from '../images/RocketImage.png'
 
 export function Slide9() {
+  const [animate, setAnimate] = React.useState(false)
+  const componentRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+        const element = componentRef.current;
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 600  && rect.bottom >= 0) {
+                setAnimate(true)
+                console.log("first")
+            } else {
+                setAnimate(false)
+            }
+        }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
-    <div className=' relative w-full bg-auto  md:bg-no-repeat bg-center md:bg-right '>
+    <div ref={componentRef} className=' relative w-full bg-auto md:bg-no-repeat bg-center md:bg-right '>
 
       <div className='absolute opacity-70 top-10 '>
         <Image src={line} alt="line" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] ' />
       </div>
       <div className='flex flex-row'>
-        <div className='flex md:w-7/12 justify-center md:justify-end items-center h-full sm:min-h-screen py-36' >
+        <div className='flex md:w-1/2 justify-center md:justify-end items-center h-full sm:min-h-screen py-36' >
           <div className='text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8 gap-6'>
             <p className='text-7xl  md:text-[120px] font-bold  text-center md:text-left font-thunder tracking-wide italic'>
               ROCKET
@@ -21,13 +43,12 @@ export function Slide9() {
              feet in the air with precision-engineered solid motor rockets.</p>
           </div>
         </div>
-        <div className='hidden md:flex opacity-50 h-full my-auto' >
-          <p className=' text-5xl sm:text-6xl  md:text-[120px] font-bold font-thunder  italic outline rotate-90 leading-none'>
+        <div className=' absolute z-[-1] md:z-0 bottom-0 flex items-end md:relative md:block h-full my-auto' >
+
+          <p className='hidden md:block text-5xl sm:text-6xl  md:text-[120px] font-bold font-thunder opacity-80 italic outline -rotate-90 leading-none'>
             ROCKET
           </p>
-          <p className=' text-5xl sm:text-6xl  md:text-[120px] font-bold font-thunder  italic outline -rotate-90 leading-none'>
-            ROCKET
-          </p>
+          <Image src={rocket} alt="rocket" className={` w-[550px] lg:w-[650px] xl:w-[750px] transform ${animate && 'rocketUp'}`} />
         </div>
       </div>
 

@@ -375,4 +375,17 @@ hr{
   }
 }
 
+@keyframes rocketUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10000px); /* Adjust the distance as needed */
+  }
+}
+
+.rocketUp{
+  animation: rocketUp 10s forwards cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 
