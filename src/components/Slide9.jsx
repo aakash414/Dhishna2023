@@ -16,7 +16,9 @@ export function Slide9() {
               ROCKET
             </p>
 
-            <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left py-6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum pretium semper. Suspendisse potenti. Morbi quam leo, viverra sed porta vitae, elementum vel massa. Morbi sed molestie velit, viverra pretium lacus. Proin eu malesuada odio, id rutrum arcu. Proin condimentum, mi eget pharetra porta, dui neque varius tellus, ut posuere turpis velit ut neque. Sed sed nisi id arcu cursus ornare in quis purus. Donec sagittis sapien et turpis vehicula, vel bibendum elit accumsan.</p>
+            <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left py-6'>Experience the marvel of our student-designed and engineered model rocket. This is a first-of-its-kind launch event in Kerala,
+             presented by the students of SOE, CUSAT. Witness our mission to reach 10,000 
+             feet in the air with precision-engineered solid motor rockets.</p>
           </div>
         </div>
         <div className='hidden md:flex opacity-50 h-full my-auto' >
