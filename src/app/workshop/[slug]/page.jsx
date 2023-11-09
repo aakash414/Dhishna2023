@@ -63,6 +63,7 @@ function Page() {
                 console.error("Error fetching data:", error);
                 setLoading(false);
             });
+       
     }, []);
 
     const slug = window.location.href.split('/').pop();

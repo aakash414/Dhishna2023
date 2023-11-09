@@ -2,7 +2,8 @@ import React from 'react'
 import line from '../images/line.png'
 import Image from 'next/image'
 import Wheel from '../images/wheel2.png'
-import chakraImage from '../images/chakraImage.jpg'
+// import chakraImage from '../images/chakraImage.jpg'
+import chakra from '../images/chakra1.png'
 
 export function Slide4() {
     const [animate, setAnimate] = React.useState(false)
@@ -70,7 +71,7 @@ export function Slide4() {
             <div className="flex flex-row">
                 <div className="flex flex-row md:w-2/3 md:transform md:-translate-x-[200px]"> {/* Divide equally */}
                     <div className="md:relative absolute ` flex justify-center items-center  ">
-                        <Image src={Wheel} height={400} width={500} className="animate-spin  duration-100 ease-in"/>
+                        <Image src={Wheel} height={400} width={500} className="animate-spin  duration-100 ease-in hover:animate-pulse sm:display-hidden "/>
                     </div>
                     <div
                         className="flex justify-center lg:justify-end items-center h-full sm:min-h-screen py-16 md:px-24">
@@ -92,12 +93,12 @@ export function Slide4() {
                         </div>
                     </div>
                 </div>
-                <div className="hidden lg:flex flex-col flex-1 opacity-100 h-full sm:min-h-screen py-56">
+                <div className=" lg:flex flex-col flex-1 opacity-100 h-full sm:min-h-screen py-56 pr-36 w-[90%] ml-26">
                     <p className="text-5xl sm:text-6xl md:text-[120px] opacity-50 font-bold text-center md:text-left font-thunder tracking-wide italic drop-shadow outline">
                         CHAKRA
                     </p>
                     {/*<div className="text-opacity-100">*/}
-                    <Image className={` transform ${animate && 'chakraRight'}`}  src={chakraImage}   alt="chakraImage"/>
+                    <Image className={` transform ${animate && 'chakraRight'} w-full`}  src={chakra} alt="chakraImage"  />
                     {/*</div>*/}
                 </div>
             </div>

@@ -50,14 +50,14 @@ export default function Layout({children}) {
         <html lang="en" className="h-full antialiased">
         <body className="flex min-h-full flex-col">
         <RootLayout>
-            <video
+            {/* <video
                 ref={videoRef}
                 src="/raone.mp4"
                 playsInline={true}
                 preload="eager"
                 muted={true}
                 className="fixed top-0 hidden md:block"
-            ></video>
+            ></video> */}
             {children}
         </RootLayout>
         </body>

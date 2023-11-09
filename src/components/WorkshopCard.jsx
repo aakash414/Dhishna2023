@@ -46,7 +46,8 @@ const WorkshopCard = ({data}) => {
                 /> */}
                
                 {/* <img src={urlFor(data.icon).width(200).url()} className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}/> */}
-                <img src={urlFor(data.icon).width(300).height(300).url()} className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}/>
+
+{     data.icon &&  <img src={urlFor(data.icon).width(300).height(300).url()} className={"object-cover object-center  group-hover:scale-90 transition duration-300 ease-in-out"}/>}
                
                
                 

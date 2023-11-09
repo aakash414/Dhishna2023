@@ -19,7 +19,7 @@ export function Slide5() {
                     <div className='flex-col md:flex-row flex w-full h-full'>
                         <div className='flex w-full md:w-1/2 h-full pt-4 justify-center md:justify-end'>
                             <div className='flex w-3/4 text-white'>
-                                <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left py-2 md:py-6'>
+                                <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left  md:py-20'>
                                     Get ready to groove to the extraordinary musical extravaganza by our virtuoso Nikita
                                     Gandhi. Join our pro show and let's 'jugunu' all night long at Dhishna '23!
                                     Workshops pink tapes: Grab tickets now to our workshops and lectures
@@ -27,7 +27,7 @@ export function Slide5() {
                             </div>
 
                         </div>
-                            <div className='flex md:w-3/4 pr-36'>
+                            <div className='flex md:w-3/4 p-18'>
                                 <div className='flex w-full h-full'>
                                     <Image src={proshow} className='w-full h-full' />
                                     {/* <div className='w-full bg-white z-[100]'>jhjhvhjhjy</div> */}

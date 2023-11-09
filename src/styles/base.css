@@ -390,7 +390,7 @@ hr{
 
 @keyframes chakraRight {
   from {
-    transform: translate(-750px,-400px);
+    transform: translate(-500px,-300px);
   }
   to {
     transform: translate(0,0); /* Adjust the distance as needed */
@@ -399,7 +399,7 @@ hr{
 }
 
 .chakraRight{
-  animation: chakraRight 2s forwards cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation: chakraRight 1s forwards ;
 }
 
 
@@ -432,4 +432,7 @@ video#video-bg {
   height: 100%;
   object-fit: cover;
 }
+
+
+
 
