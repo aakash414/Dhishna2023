@@ -55,7 +55,7 @@ export default function Layout({children}) {
                 src="/raone.mp4"
                 playsInline={true}
                 preload="eager"
-                muted
+                muted={true}
                 className="fixed top-0"
             ></video>
             {children}
