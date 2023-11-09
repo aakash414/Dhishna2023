@@ -149,7 +149,7 @@ function page() {
 
   return (
 
-    <div className='bg-black relative' ref={ref}>
+    <div className=' relative' ref={ref}>
       <Slide1 />
       <Slide2 />
       <Slide3 />
