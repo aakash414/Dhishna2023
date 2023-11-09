@@ -56,7 +56,7 @@ export default function Layout({children}) {
                 playsInline={true}
                 preload="eager"
                 muted={true}
-                className="fixed top-0"
+                className="fixed top-0 hidden md:block"
             ></video>
             {children}
         </RootLayout>

@@ -49,8 +49,8 @@ export function Slide4() {
 
         </div> */}
             <div className="flex flex-row">
-                <div className="flex flex-row w-2/3"> {/* Divide equally */}
-                    <div className="relative flex justify-center items-center transform -translate-x-[200px]">
+                <div className="flex flex-row md:w-2/3 md:transform md:-translate-x-[200px]"> {/* Divide equally */}
+                    <div className="relative flex justify-center items-center ">
                         <Image src={Wheel} height={400} width={500} className="animate-spin duration-100 ease-in"/>
                     </div>
                     <div
