@@ -12,7 +12,7 @@
 //   const [data, setData] = useState([]);
 
 
-  
+
 //   useEffect(() => {
 //     client
 //       .fetch('*[_type == "workshop"]')
@@ -21,14 +21,14 @@
 //       })
 //       .catch(console.error);
 //   }, []);
-  
+
 //   console.log(data)
 //   return (
-//     <div className='bg-black '> 
+//     <div className='bg-black '>
 //       <div className='mx-auto '>
 //         <Workshoptitle/>
 //       </div>
-   
+
 //       <form className='mt-10 flex justify-center items-center w-full relative pt-5'>
 //             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
 //             <div className="relative w-full flex justify-center items-center">
@@ -71,7 +71,7 @@ function Page() {
 
   const [searchTerm, setSearchTerm] = useState('');
 
-  
+
   useEffect(() => {
     client
       .fetch('*[_type == "workshop"]')
@@ -80,31 +80,32 @@ function Page() {
       })
       .catch(console.error);
   }, []);
-  
-const filteredData = data.filter(workshop => 
+
+const filteredData = data.filter(workshop =>
   workshop.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
   console.log(data)
   return (
-    <div className='bg-black '> 
-      <div className='mx-auto '>
+    <div className='bg-black z-10'>
+      <div className='mx-auto  '>
         <Workshoptitle/>
       </div>
-   
-      {/* <form className='mt-10 flex justify-center items-center w-full relative pt-5'>
-            <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
-            <div className="relative w-full flex justify-center items-center">
-              <input
-                type="search"
-                id="default-search"
-                className="block w-[70%] p-3 pl-10 text-sm  border border-gray-300 rounded-full bg-black text-white"
-                placeholder="Search Events"
-                required
-              />
-            </div>
-          </form>
-      <div className="flex items-center  justify-center flex-wrap p-10 ">
-        {data.map((workshop, index) => ( */}
+      {/*  <div className='h-30 w-screen flex justify-center items-center top-0 '>*/}
+      {/*      <div className="h-[30%] text-black p-20 flex justify-center items-center z-[999] bg-white w-screen top-0 rounded-b-[30px] ">*/}
+      {/*          <span className='text-7xl font-bold'>W</span>*/}
+      {/*          <span className='text-7xl font-bold'>O</span>*/}
+      {/*          <span className='text-7xl font-bold'>R</span>*/}
+      {/*          <span className='text-7xl font-bold'>S</span>*/}
+      {/*          <div className="letter flex justify-center items-center mx-3 top-0">*/}
+      {/*              <hr />*/}
+      {/*          </div>*/}
+
+      {/*          <span className='text-7xl font-bold'>H</span>*/}
+      {/*          <span className='text-7xl font-bold'>O</span>*/}
+      {/*          <span className='text-7xl font-bold'>P</span>*/}
+      {/*          <span className='text-7xl font-bold'>S</span>*/}
+      {/*      </div>*/}
+      {/*  </div>*/}
         <form className='mt-10 flex justify-center items-center w-full relative pt-5'>
       <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
       <div className="relative w-full flex justify-center items-center">

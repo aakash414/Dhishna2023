@@ -17,13 +17,11 @@ export function Slide5() {
                     <div className='flex-col md:flex-row flex w-full h-full'>
                         <div className='flex w-full md:w-1/2 h-full pt-4 justify-center md:justify-end'>
                             <div className='flex w-3/4 text-white'>
-                                <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left py-2 md:py-6'>Lorem
-                                    ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum pretium semper.
-                                    Suspendisse potenti. Morbi quam leo, viverra sed porta vitae, elementum vel massa.
-                                    Morbi sed molestie velit, viverra pretium lacus. Proin eu malesuada odio, id rutrum
-                                    arcu. Proin condimentum, mi eget pharetra porta, dui neque varius tellus, ut posuere
-                                    turpis velit ut neque. Sed sed nisi id arcu cursus ornare in quis purus. Donec
-                                    sagittis sapien et turpis vehicula, vel bibendum elit accumsan.</p>
+                                <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left py-2 md:py-6'>
+                                    Get ready to groove to the extraordinary musical extravaganza by our virtuoso Nikita
+                                    Gandhi. Join our pro show and let's 'jugunu' all night long at Dhishna '23!
+                                    Workshops pink tapes: Grab tickets now to our workshops and lectures
+                                    Robo wars: Unleash your competitive spirit and conquer the arena!</p>
                             </div>
 
                         </div>
