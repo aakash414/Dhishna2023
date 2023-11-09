@@ -174,7 +174,7 @@ hr{
 
 
 
-.circle {
+.circle2 {
   position: absolute;
   right:0%;
   width: 30%;
@@ -259,6 +259,88 @@ hr{
   color: transparent;
   font-weight: bolder;
 }
+
+.marquee-container {
+  width: 100%;
+  height: 50px; /* Define the desired height */
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee {
+  white-space: nowrap;
+  display: flex;
+  position: absolute;
+  animation: marquee 20s linear infinite; /* Adjust duration as needed */
+}
+
+.marquee-content {
+  display: inline-block;
+  padding: 0 20px; /* To create space between items */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-100% * 2)); /* Display 2 times the width of the container */
+  }
+}
+
+.text-xl {
+  font-size: 1.25rem; /* Adjust font size as needed */
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.container{
+  cursor: none;
+}
+
+.circle {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100px; /* Adjust the size as needed */
+  width: 100px; /* Adjust the size as needed */
+  border-radius: 50%;
+  pointer-events: none;
+  background-image: url('/arrow.png');
+  background-size: 50%;
+  background-position: 55% center; 
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Optional: Add some padding to center text within the circle */
+.circle::after {
+  content: "";
+  flex: 1;
+}
+
+
+
+
+.cursorText {
+  flex: auto;
+  font-size: inherit;
+  pointer-events: none;
+  margin: auto;
+}
+
+
+
+
+
 
 
 
