@@ -11,6 +11,8 @@ export function Slide9() {
   React.useEffect(() => {
     const handleScroll = () => {
         const element = componentRef.current;
+        console.log("element9",element);
+
         if (element) {
             const rect = element.getBoundingClientRect();
             if (rect.top < window.innerHeight - 600  && rect.bottom >= 0) {

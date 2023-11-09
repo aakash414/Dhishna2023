@@ -2,12 +2,31 @@ import React from 'react'
 import line from '../images/line.png'
 import Image from 'next/image'
 import Wheel from '../images/wheel2.png'
-import styles from '../styles/rotate.css'
-
+import chakraImage from '../images/chakraImage.jpg'
 
 export function Slide4() {
+    const [animate, setAnimate] = React.useState(false)
+    const componentRef = React.useRef(null);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const element = componentRef.current;
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 600  && rect.bottom >= 0) {
+                    setAnimate(true)
+                    console.log("first")
+                } else {
+                    setAnimate(false)
+                }
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <div className=' relative w-full bg-auto flex flex-row  md:bg-no-repeat bg-center md:bg-right '>
+        <div ref={componentRef}    className=' relative w-full bg-auto flex flex-row  md:bg-no-repeat bg-center md:bg-right '>
             <div className='absolute opacity-70 bottom-10 rotate-180'>
                 <Image src={line} alt="line" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] '/>
             </div>
@@ -50,8 +69,8 @@ export function Slide4() {
         </div> */}
             <div className="flex flex-row">
                 <div className="flex flex-row md:w-2/3 md:transform md:-translate-x-[200px]"> {/* Divide equally */}
-                    <div className="relative flex justify-center items-center ">
-                        <Image src={Wheel} height={400} width={500} className="animate-spin duration-100 ease-in"/>
+                    <div className="md:relative absolute ` flex justify-center items-center  ">
+                        <Image src={Wheel} height={400} width={500} className="animate-spin  duration-100 ease-in"/>
                     </div>
                     <div
                         className="flex justify-center lg:justify-end items-center h-full sm:min-h-screen py-16 md:px-24">
@@ -60,7 +79,7 @@ export function Slide4() {
                                 CHAKRA
                             </p>
                             <p className="text-xl md:text-2xl font-light leading-6 font-satoshi text-justify md:text-left">
-                                MECHANICAL DEPARTMENT
+                                MESAC
                             </p>
                             <p className="text-sm md:text-base font-normal leading-6 font-satoshi text-justify md:text-left py-2 md:py-6">
                                 If you are passionate about automobiles and innovations, then CHAKRA 3.0 is the event
@@ -73,10 +92,13 @@ export function Slide4() {
                         </div>
                     </div>
                 </div>
-                <div className="hidden lg:flex flex-1 opacity-50 h-full sm:min-h-screen py-56">
-                    <p className="text-5xl sm:text-6xl md:text-[120px] font-bold text-center md:text-left font-thunder tracking-wide italic drop-shadow outline">
+                <div className="hidden lg:flex flex-col flex-1 opacity-100 h-full sm:min-h-screen py-56">
+                    <p className="text-5xl sm:text-6xl md:text-[120px] opacity-50 font-bold text-center md:text-left font-thunder tracking-wide italic drop-shadow outline">
                         CHAKRA
                     </p>
+                    {/*<div className="text-opacity-100">*/}
+                    <Image className={` transform ${animate && 'chakraRight'}`}  src={chakraImage}   alt="chakraImage"/>
+                    {/*</div>*/}
                 </div>
             </div>
         </div>
