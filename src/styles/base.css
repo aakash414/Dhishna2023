@@ -82,7 +82,7 @@ body {
 }
 
 .marquee pre  {
-  animation: marquee 5s linear infinite; /* Adjust the duration to make it faster */
+  animation: marquee 3s linear infinite; /* Adjust the duration to make it faster */
 }
 
 .marquee2 pre  {
@@ -106,7 +106,7 @@ body {
 
 .mix-blend-screen {
   mix-blend-mode: screen;
-}   
+}
 
 
 span{
@@ -119,8 +119,8 @@ span{
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-  
-  	
+
+
 	@media(max-width: 600px){ transform: scale(.65); }
 }
 hr{
@@ -343,5 +343,36 @@ hr{
 
 
 
+
+.linear-wipe {
+  text-align: center;
+  background: linear-gradient(to right, #FF7F08 20%, #e6c8ac 40%, #e9c4ea 60%, #AD13B2 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.add-animation {
+  -webkit-animation: shine 3s ease-in-out infinite;
+  animation: shine 3s ease-in-out infinite;
+}
+.add-animation-reverse {
+  -webkit-animation: shine 3s ease-in-out infinite reverse ;
+  animation: shine 3s ease-in-out infinite reverse;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 
 
