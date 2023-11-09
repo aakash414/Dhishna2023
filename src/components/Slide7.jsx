@@ -55,7 +55,6 @@ Satoshi'>
                         play={isScrolling}
                         className='text-[#020202] bg-[#FF7F08] w-screen  py-2'
                         direction={isScrollingDown ? 'left' : 'right'}
-
                     >
                         CHECK OUT OUR WORKSHOPS & LECTURES CHECK OUT OUR WORKSHOPS & LECTURES CHECK OUT OUR WORKSHOPS &
                         LECTURES CHECK OUT OUR WORKSHOPS & LECTURES
