@@ -52,7 +52,7 @@ export default function Layout({children}) {
         <RootLayout>
             <video
                 ref={videoRef}
-                src="/full%20hero.mp4"
+                src="/raone.mp4"
                 playsInline={true}
                 preload="eager"
                 muted

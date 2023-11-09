@@ -271,16 +271,6 @@ hr{
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /*text-align: center;*/
-  /*display: inline-block;*/
-  /*font: bold 4.5em/1.5 Bebas, sans-serif;*/
-  /*color: #ff5029; !*non-webkit fallback*!*/
-  /*font-size: 100px;*/
-  /*text-transform: uppercase;*/
-  /*background: -webkit-linear-gradient( #ffb400, #eebb9b, #f0e391);*/
-  /*-webkit-background-clip: text;*/
-  /*-webkit-text-fill-color: transparent;*/
-  /*background-attachment: fixed;*/
 }
 
 .add-animation {
