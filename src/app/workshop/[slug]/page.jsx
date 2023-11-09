@@ -14,11 +14,6 @@ function Page() {
         return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
-    // const builder = imageUrlBuilder(client)
-
-    // function urlFor(source) {
-    //     return builder.image(source);
-    // }
     const builder = imageUrlBuilder(client);
 
     function urlFor(source) {
@@ -89,7 +84,6 @@ function Page() {
     //         })
     //         .catch(console.error);
     // }, [slug]);
-
     return (
         <div className="py-24 sm:py-32 bg-gray-950">
             <div className="px-6 mt-8 lg:px-8">

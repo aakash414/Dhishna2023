@@ -4,7 +4,7 @@ import robo from '../../public/robo.mp4'
 const VideoBackground = () => {
   return (
     <div className="video-background">
-      <video autoPlay muted loop id="video-bg " className='z-[-5]'>
+      <video autoPlay muted loop id="video-bg " className='z-[-2]'>
         <source src={robo} type="video/mp4" />
       </video>
     </div>

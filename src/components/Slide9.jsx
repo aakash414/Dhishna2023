@@ -35,7 +35,7 @@ export function Slide9() {
       </div>
       <div className='flex flex-row'>
         <div className='flex md:w-1/2 justify-center md:justify-end items-center h-full sm:min-h-screen py-36' >
-          <div className='text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8 gap-6'>
+          <div className='text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8 gap-6 z-10'>
             <p className='text-7xl  md:text-[120px] font-bold  text-center md:text-left font-thunder tracking-wide italic'>
               ROCKET
             </p>
@@ -45,7 +45,7 @@ export function Slide9() {
              feet in the air with precision-engineered solid motor rockets.</p>
           </div>
         </div>
-        <div className=' absolute z-[-1] md:z-0 bottom-0 flex items-end md:relative md:block h-full my-auto' >
+        <div className=' absolute z-0 md:z-0 botto0 flex items-end md:relative md:block h-full my-auto' >
 
           <p className='hidden md:block text-5xl sm:text-6xl  md:text-[120px] font-bold font-thunder opacity-80 italic outline -rotate-90 leading-none'>
             ROCKET
