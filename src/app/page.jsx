@@ -147,7 +147,9 @@ function Landing() {
         setCursorVariant("default");
     }
 
+    if (typeof window !== "undefined") {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    }
 
     const videoRef = useRef(null);
     const [percent, setPercent] = useState(0);

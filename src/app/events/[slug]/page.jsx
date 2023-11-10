@@ -65,7 +65,9 @@ function Page() {
             });
     }, []);
 
+    if (typeof window !== "undefined") {
     const slug = window.location.href.split('/').pop();
+    }
     console.log("slug",slug);
     console.log("data",data)
 
