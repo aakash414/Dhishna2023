@@ -13,7 +13,7 @@ import {motion} from "framer-motion";
 import VideoBackground from '@/components/VideoBackground';
 
 
-function page() {
+function Landing() {
 
 
     const [cursorVariant, setCursorVariant] = useState("default");
@@ -256,4 +256,4 @@ function page() {
     )
 }
 
-export default page
+export default Landing

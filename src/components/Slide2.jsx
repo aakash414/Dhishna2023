@@ -12,7 +12,7 @@ export function Slide2() {
                         THE REMARKABLE REVIVAL
                     </p>
                     <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left'>Since our last
-                        appearance in 2020, we've kept a solemn silence. Now, it is 2023.
+                        appearance in 2020, we&apos;ve kept a solemn silence. Now, it is 2023.
                         We rise from the ashes. Dhishna transcends being just a Tech Fest - it embodies a collective
                         spirit with a singular heartbeat.
                     </p>

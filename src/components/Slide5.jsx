@@ -21,7 +21,7 @@ export function Slide5() {
                             <div className='flex w-3/4 text-white'>
                                 <p className='text-base font-normal leading-6 font-satoshi text-justify md:text-left  md:py-20'>
                                     Get ready to groove to the extraordinary musical extravaganza by our virtuoso Nikita
-                                    Gandhi. Join our pro show and let's 'jugunu' all night long at Dhishna '23!
+                                    Gandhi. Join our pro show and let&apos;s &apos;jugunu&apos; all night long at Dhishna &apos;23!
                                     Workshops pink tapes: Grab tickets now to our workshops and lectures
                                     Robo wars: Unleash your competitive spirit and conquer the arena!</p>
                             </div>
