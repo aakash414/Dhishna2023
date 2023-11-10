@@ -1,5 +1,5 @@
 "use client"
-import React, {useState,useEffect, useRef} from 'react';
+import React, {useState,useEffect, useRef,useLayoutEffect} from 'react';
 import {Slide1} from '@/components/Slide1';
 import {Slide2} from '@/components/Slide2';
 import {Slide3} from '@/components/Slide3';
@@ -17,6 +17,7 @@ function Landing() {
 
 
     const [cursorVariant, setCursorVariant] = useState("default");
+    const [isMobile, setIsMobile] = useState(false);
 
     const ref = useRef(null);
     const mouse = useMouse(ref, {
@@ -146,12 +147,23 @@ function Landing() {
 
         setCursorVariant("default");
     }
-    let isMobile;
-    useEffect(()=>{
-        isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-    },[isMobile])
-
+    useLayoutEffect(() => {
+        const checkIsMobile = () => {
+          setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+        };
+    
+        // Initial check
+        checkIsMobile();
+    
+        // Run the check when the window is resized
+        const resizeObserver = new ResizeObserver(checkIsMobile);
+        resizeObserver.observe(document.body);
+    
+        // Clean up the ResizeObserver when the component unmounts
+        return () => {
+          resizeObserver.disconnect();
+        };
+      }, []); 
 
     const videoRef = useRef(null);
     const [percent, setPercent] = useState(0);

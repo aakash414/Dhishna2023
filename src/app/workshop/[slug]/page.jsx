@@ -48,9 +48,10 @@ function Page() {
                 setData(filteredData);
                 // console.log("Received filtered data:", filteredData);
                 setLoading(false);
+                console.log("data",data)
 
             } else {
-                setLoading(false);
+                setLoading(true);
                 // console.error("Data not found for slug:", slug);
             }
         })
@@ -60,9 +61,13 @@ function Page() {
             });
        
     }, []);
-    if (typeof window !== "undefined") {
-    const slug = window.location.href.split('/').pop();
-    }
+
+    let slug;
+
+    useEffect(()=>{
+        slug = window.location.href.split('/').pop();
+    },[])
+
     console.log("slug",slug);
     console.log("data",data)
         // useEffect(() => {
