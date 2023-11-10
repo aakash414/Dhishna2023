@@ -43,7 +43,11 @@ function Header({
   invert = false,
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
-  const pathname = window.location.pathname;
+  let pathname;
+  useEffect(()=>{
+         pathname = window.location.pathname;
+  },[pathname])
+
   console.log('pathname',pathname, pathname === "/events")
   if (pathname === "/events" || pathname === "/workshop" ) {
     return <div className='hidden'></div>;
@@ -162,7 +166,19 @@ function RootLayoutInner({ children }) {
     return () => {
       window.removeEventListener('click', onClick)
     }
-  }, [])
+  }, []) // Replace this with your actual reference
+
+  useEffect(() => {
+    if (expanded) {
+      const timeoutId = setTimeout(() => {
+        closeRef.current?.focus({ preventScroll: true });
+      });
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [expanded, closeRef]);
+
+
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
@@ -171,18 +187,13 @@ function RootLayoutInner({ children }) {
         aria-hidden={expanded ? 'true' : undefined}
         inert={expanded ? '' : undefined}
       >
-        <Header
-          panelId={panelId}
-          icon={MenuIcon}
-          toggleRef={openRef}
-          expanded={expanded}
-          onToggle={() => {
-            setExpanded((expanded) => !expanded)
-            window.setTimeout(() =>
-              closeRef.current?.focus({ preventScroll: true }),
-            )
-          }}
-        />
+      <Header
+            panelId={panelId}
+            icon={MenuIcon}
+            toggleRef={openRef}
+            expanded={expanded}
+            onToggle={() => setExpanded((prevExpanded) => !prevExpanded)}
+          />
       </div>
 
       <motion.div

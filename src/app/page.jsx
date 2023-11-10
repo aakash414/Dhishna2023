@@ -146,10 +146,12 @@ function Landing() {
 
         setCursorVariant("default");
     }
+    let isMobile;
+    useEffect(()=>{
+        isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    if (typeof window !== "undefined") {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    }
+    },[isMobile])
+
 
     const videoRef = useRef(null);
     const [percent, setPercent] = useState(0);

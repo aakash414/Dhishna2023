@@ -16,7 +16,7 @@ export function Newslide() {
     return (
 
         <div className='text-white flex justify-center flex-col items-center w-full h-screen px-8 sm:px-8 '>
-            <div class="roller">
+            <div className="roller">
                 <p className='text-5xl sm:text-6xl md:text-7xl font-medium text-center md:text-left font-thunder tracking-wide' id="rolltext">
                     THE<br />
                     REMARKABLE<br />

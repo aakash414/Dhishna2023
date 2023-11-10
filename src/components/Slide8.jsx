@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import  roboImage  from '../images/roboImage.svg'
 
 
 export function Slide8() {
@@ -28,7 +29,7 @@ export function Slide8() {
                 </div>
                 <div className='md:flex w-2/5 justify-center text-white hidden '>
                 <Image
-                    src="../images/RoboImage.svg"
+                    src={roboImage}
                     alt="roboimage"
                     className="bounce"
                     width={600}
