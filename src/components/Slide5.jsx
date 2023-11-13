@@ -59,7 +59,7 @@ export function Slide5() {
                     </div>
                     <div className='flex flex-row items-center gap-8 w-full font-medium font-satoshi flex-end '>
                         <div className='h-0.5  w-[300px] md:w-[600px] bg-white'></div>
-                        <p className='text-white text-md sm:text-lg md:text-xl'>25th October</p>
+                        <p className='text-white text-md sm:text-lg md:text-xl'>25th November</p>
                     </div>
 
                 </div>

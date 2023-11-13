@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React, {useState, useEffect} from 'react'
 
 export function Slide3() {
@@ -45,9 +46,11 @@ export function Slide3() {
                     BIGGEST EVENTS HAPPENING IN KERALA</p>
                 <div
                     className={`flex linear-wipe  ${isScrolling ? scrollDirection : ''} justify-center items-center w-full`}>
-                    <h1 className={` h-full  text-center mt-6 leading-none font-thunder1 xl:text-[750px] lg:text-[560px] md:text-[400px] sm:text-[350px] text-[200px] italic `}>
-                        Events
-                    </h1>
+                    <Link href='/events'>
+                        <h1 className={` h-full  text-center mt-6 leading-none font-thunder1 xl:text-[750px] lg:text-[560px] md:text-[400px] sm:text-[350px] text-[200px] italic `}>
+                            Events
+                        </h1>
+                    </Link>
                     {/*<h1 className={`linear-wipe w-1/2 ${isScrolling ? scrollDirection : ''} h-full  text-center mt-6 leading-none font-thunder1 xl:text-[750px] lg:text-[560px] md:text-[400px] sm:text-[350px] text-[200px] italic`}>*/}
                     {/*  nts&nbsp;*/}
                     {/*</h1>*/}
