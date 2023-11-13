@@ -11,10 +11,7 @@ function Page() {
     fetch('https://api.dhishna.org/api/ca/topten')
       .then((data) => data.json())
       .then((cas) => {
-        const filtered = cas.context.filter((ca) => ca.points == 0)
-        filtered.forEach((ca) => {
-          console.log(ca)
-        })
+        const filtered = cas.context.filter((ca) => ca.points != 0)
         setCas(filtered)
       }, [])
   }, [])
