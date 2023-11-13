@@ -1,59 +1,89 @@
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import AvatarIcon from '../../images/avatar.jpg'
+import { motion } from 'framer-motion'
 
-"use client"
-import React from 'react';
-import Image from 'next/image';
-import AvatarIcon from "../../images/avatar.jpg"
-import { motion } from 'framer-motion';
+function Page() {
+  const [cas, setCas] = React.useState([])
 
-
-function page() {
+  React.useEffect(() => {
+    fetch('https://api.dhishna.org/api/ca/topten')
+      .then((data) => data.json())
+      .then((cas) => {
+        const filtered = cas.context.filter((ca) => ca.points == 0)
+        filtered.forEach((ca) => {
+          console.log(ca)
+        })
+        setCas(filtered)
+      }, [])
+  }, [])
 
   return (
-    <div className=' items-start flex flex-col gap-2 max-w-screen h-screen justify-center '>
-      <div className='w-full text-white flex justify-center items-center font-extrabold flex-col '>
-        <motion.h1 className=' mt-4 pt-24  text-4xl md:text-7xl'
-          whileHover={{ scale: 1.1 }}>
+    <div className=" max-w-screen flex h-screen flex-col items-start justify-center gap-2 ">
+      <div className="flex w-full flex-col items-center justify-center font-extrabold text-white ">
+        <motion.h1
+          className=" mt-4 pt-24  text-4xl md:text-7xl"
+          whileHover={{ scale: 1.1 }}
+        >
           LEADERBOARD
         </motion.h1>
-        <div className='w-full flex justify-evenly items-center pt-8'>
-          <div className='flex flex-col gap-2 items-center'>
-            <Image src={AvatarIcon} width={100}
-              height={100} className='rounded-full' />
-            <p className=''>Second</p>
+        <div className="flex w-full items-center justify-evenly pt-8">
+          <div className="flex flex-col items-center gap-2">
+            <Image
+              src={AvatarIcon}
+              width={100}
+              height={100}
+              className="rounded-full"
+            />
+            <p className="">Second</p>
           </div>
-          <div className='flex flex-col gap-2 items-center'>
-            <Image src={AvatarIcon} width={150}
-              height={150} className='rounded-full' />
+          <div className="flex flex-col items-center gap-2">
+            <Image
+              src={AvatarIcon}
+              width={150}
+              height={150}
+              className="rounded-full"
+            />
             <p>First</p>
           </div>
-          <div className='flex flex-col gap-2 items-center'>
-            <Image src={AvatarIcon} width={80}
-              height={80} className='rounded-full' />
+          <div className="flex flex-col items-center gap-2">
+            <Image
+              src={AvatarIcon}
+              width={80}
+              height={80}
+              className="rounded-full"
+            />
             <p>Third</p>
           </div>
-
         </div>
       </div>
-      <div className='w-full flex flex-grow py-5 justify-center px-[2rem] md:px-[12rem] '>
-        <div className='bg-black rounded-lg w-full border-gray-500 border-[.15rem] px-5 py-3 gap-2 flex flex-col'>
-          <motion.div whileHover={{ scale: 1.02 }} className='flex items-center justify-between gap-1 bg-slate-200 text-black  px-5 rounded-md'>
-            <div className='w-1/2 flex gap-1 '>
-              <p>5.</p>
-              <div className='flex  flex-col '>
-                <p className="font-bold font-mono">SAI</p>
-                <p className='font-normal '>CUSAT</p>
-              </div>
-            </div>
-            <div className='w-1/2 flex justify-end items-center'>
-              <p>₹ 5000</p>
-            </div>
-          </motion.div>
+      <div className="flex w-full flex-grow justify-center px-[2rem] py-5 md:px-[12rem] ">
+        <div className="flex w-full flex-col gap-2 rounded-lg border-[.15rem] border-gray-500 bg-black px-5 py-3">
+          {cas.map((ca, i) => {
+            return (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.02 }}
+                className="flex items-center justify-between gap-1 rounded-md bg-slate-200  px-5 text-black"
+              >
+                <div className="flex w-1/2 gap-1 ">
+                  <p>{i + 1}.</p>
+                  <div className="flex  flex-col ">
+                    <p className="font-mono font-bold">{ca.name}</p>
+                    <p className="font-normal ">{ca.college}</p>
+                  </div>
+                </div>
+                <div className="flex w-1/2 items-center justify-end">
+                  <p>{ca.points}</p>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
-
-
     </div>
   )
 }
 
-export default page;
+export default Page
