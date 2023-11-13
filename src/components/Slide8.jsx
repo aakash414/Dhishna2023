@@ -8,6 +8,15 @@ export function Slide8() {
         // change font to thunder and fix size
         <div className='w-full h-full px-10 py-16  z-10 relative'>
             <p className='text-white text-7xl sm:text-[120px] text-center font-bold italic py-8 font-thunder'>ROBO GAMES</p>
+            <div className='md:hidden w-full justify-center text-white flex  items-center pb-10'>
+                <Image
+                    src={roboImage}
+                    alt="roboimage"
+                    className="bounce"
+                    width={600}
+                    height={300}
+                    />
+                </div>
             <div className='flex flex-col sm:flex-row justify-between items-center md:items-start h-full w-full gap-y-16'>
                 <div className='flex flex-1 items-end justify-end flex-col gap-16 font-satoshi'>
                     <div className='bg-[#FF7F08] w-48 h-12 -skew-x-[40deg] '>
