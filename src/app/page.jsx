@@ -11,6 +11,7 @@ import Slide5 from '@/components/Slide5';
 import useMouse from "@react-hook/mouse-position";
 import {motion} from "framer-motion";
 import VideoBackground from '@/components/VideoBackground';
+import TextRevolve from '@/components/TextRevolve';
 
 
 function Landing() {
@@ -240,6 +241,7 @@ function Landing() {
         ></video>}
             {isMobile && <VideoBackground/>}
             <Slide1/>
+            <TextRevolve/>
             <Slide2/>
             <Slide3/>
             <motion.div
