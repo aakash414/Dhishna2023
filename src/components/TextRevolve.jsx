@@ -1,14 +1,21 @@
 import React from 'react'
 import './textrevolve.css'
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/src/ScrollTrigger'
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const TextRevolve = () => {
-    const tl = React.useRef();
+    const t1 = React.useRef();
+    const t2 = React.useRef();
+    const t3 = React.useRef();
     React.useEffect(() => {
-        tl.current = gsap.timeline()
-            .from(".line h1", 1.8, {
-                y: 100,
+        console.log('executed')
+        t1.current = gsap.timeline()
+        t2.current = gsap.timeline()
+        t3.current = gsap.timeline()
+
+        t1.current.from(".line .line1", 1.5,
+            {
+                y: 200,
                 ease: "power4.out",
                 delay: 1,
                 skewY: 5,
@@ -16,36 +23,90 @@ const TextRevolve = () => {
                     amount: 0.3
                 }
             })
-            .to('.line h1', 1.8, {
-                y: -150,
+            .to('.line .line1', 1.5, {
+                y: -250,
                 ease: "power4.out",
-                delay: 3,
+                delay: 1.5,
+                skewY: 0,
+                stagger: {
+                    amount: 0.3
+                }
+            })
+        t2.current.from(".line .line2", 1.5,
+            {
+                y: 200,
+                ease: "power4.out",
+                delay: 1,
                 skewY: 5,
                 stagger: {
                     amount: 0.3
                 }
             })
-        ScrollTrigger.create({
-            trigger: ".line h1", // Use a different trigger element if needed
-            start: "top 80%", // Adjust as needed
-            end: "top 20%", // Adjust as needed
-            animation: tl.current,
-            scrub: true, // Adjust as needed
-            markers: true, // Remove this line in production
-        });
+            .to('.line .line2', 1.5, {
+                y: -250,
+                ease: "power4.out",
+                delay: 1.5,
+                skewY: 0,
+                stagger: {
+                    amount: 0.3
+                }
+            })
+        t3.current.from(".line .line3", 1.5,
+            {
+                y: 200,
+                ease: "power4.out",
+                delay: 1,
+                skewY: 5,
+                stagger: {
+                    amount: 0.3
+                }
+            })
+            .to('.line .line2', 1.5, {
+                y: -250,
+                ease: "power4.out",
+                delay: 1.5,
+                skewY: 0,
+                stagger: {
+                    amount: 0.3
+                }
+            })
+            ScrollTrigger.create({
+                trigger: ".line .line1",
+                start: "top 80%",
+                end: "top 20%",
+                animation: t1.current,
+                scrub: true,
+                markers: true,
+            });
+            ScrollTrigger.create({
+                trigger: ".line .line2",
+                start: "top 80%",
+                end: "top 20%",
+                animation: t2.current,
+                scrub: true,
+                markers: true,
+            });
+            ScrollTrigger.create({
+                trigger: ".line .line3",
+                start: "top 80%",
+                end: "top 20%",
+                animation: t3.current,
+                scrub: true,
+                markers: true,
+            });
     }, [])
   return (
-    <div className='relative h-screen bg-transparent flex justify-center mt-[35vh]'>
-        <div className=''>
+    <div className='h-screen relative'>
+        <div className='fixed top-[35vh] bg-transparent flex justify-center'>
             <div class="container">
                 <div class="line">
-                    <h1 className='text-white text-[100px] font-thunder tracking-wide font-medium'>Hello!</h1>
+                    <h1 className='line1 text-white text-[200px] font-thunder tracking-wide font-medium'>DHISHNA</h1>
                 </div>
                 <div class="line">
-                    <h1 className='text-white text-[100px] font-thunder tracking-wide font-medium'>This is a</h1>
+                    <h1 className='line2 text-white text-[200px] font-thunder tracking-wide font-medium'>2023</h1>
                 </div>
                 <div class="line">
-                    <h1 className='text-white text-[100px] font-thunder tracking-wide font-medium'>text reveal animation.</h1>
+                    <h1 className='line3 text-white text-[200px] font-thunder tracking-wide font-medium'>November</h1>
                 </div>
             </div>
         </div>

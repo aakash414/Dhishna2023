@@ -4,14 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .container .line {
-    height: 110px;
+}
+.container .line {
+    height: 200px;
     position: relative;
     overflow: hidden;
-  }
-  .container .line span {
-    position: absolute;
-    font-size: 3rem;
-    line-height: 4.2rem;
-  }
+}
