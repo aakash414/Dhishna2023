@@ -78,41 +78,43 @@ const TextRevolve = () => {
             })
             ScrollTrigger.create({
                 trigger: ".line .line1",
-                start: "top 100%",
-                end: "top 0%",
+                start: "top 80%",
+                end: "top 20%",
                 animation: t1.current,
                 scrub: true,
                 markers: true,
             });
             ScrollTrigger.create({
                 trigger: ".line .line2",
-                start: "top 100%",
-                end: "top 0%",
+                start: "top 120%",
+                end: "top 20%",
                 animation: t2.current,
                 scrub: true,
                 markers: true,
             });
             ScrollTrigger.create({
                 trigger: ".line .line3",
-                start: "top 100%",
-                end: "top 0%",
+                start: "top 140%",
+                end: "top 20%",
                 animation: t3.current,
                 scrub: true,
                 markers: true,
             });
     }, [])
   return (
-    <div className='h-screen relative'>
+    <div className='min-h-screen mb-[500px] relative'>
         <div className='absolute top-[200px] bg-transparent flex justify-center'>
             <div class="container">
-                <div class="line absolute">
-                    <h1 className='line1 text-white text-[300px] font-thunder tracking-wide font-medium'>DHISHNA</h1>
+                <div class="line">
+                    <h1 className='line1 text-white text-[200px] font-thunder tracking-wide font-medium'>DHISHNA</h1>
                 </div>
-                <div class="line absolute">
-                    <h1 className='line2 text-white text-[300px] font-thunder tracking-wide font-medium'>2023</h1>
+                <div class="line">
+                    <h1 className='line2 text-white text-[200px] font-thunder tracking-wide font-medium'>
+                        2023
+                    </h1>
                 </div>
-                <div class="line absolute">
-                    <h1 className='line3 text-white text-[300px] font-thunder tracking-wide font-medium'>November</h1>
+                <div class="line">
+                    <h1 className='line3 text-white text-[200px] font-thunder tracking-wide font-medium'>November</h1>
                 </div>
             </div>
         </div>

@@ -48,7 +48,6 @@ function Header({
          pathname = window.location.pathname;
   },[pathname])
 
-  console.log('pathname',pathname, pathname === "/events")
   if (pathname === "/events" || pathname === "/workshop" ) {
     return <div className='hidden'></div>;
   }

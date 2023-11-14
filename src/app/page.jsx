@@ -170,59 +170,73 @@ function Landing() {
     const [percent, setPercent] = useState(0);
     const [lastPercent, setLastPercent] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [rev, setRev] = useState(false)
 
     useEffect(() => {
         // console.log("kooooooooooi");
 
         
-        const handleScroll = () => {
+        const handleScroll = (e) => {
             const y = window.scrollY;
             const height = document.body.clientHeight;
             const currentPercent = y * 3 / height;
-
             setPercent(currentPercent);
+            const video = videoRef.current;
+            const stopTime = 3.791606 * currentPercent;
+            if (!videoRef.current || currentPercent === 0) return;
+            if(e.deltaY < 0){
+                video.currentTime -= 0.01
+            }else{
+                video.currentTime += 0.01
+            }
         };
-        document.addEventListener("scroll", handleScroll);
+        document.addEventListener("wheel", handleScroll);
 
         return () => document.removeEventListener("scroll", handleScroll);
     }, []);
 
-    useEffect(() => {
-        // console.log("kooooooooooi");
-        console.log({percent, lastPercent});
-        if (!videoRef.current || percent === 0) return;
+    // useEffect(() => {
+    //     if (!videoRef.current || percent === 0) return;
 
-        const video = videoRef.current;
-        const stopTime = video.duration * percent;
-        // const last = lastPercent;
+    //     const video = videoRef.current;
+    //     const stopTime = video.duration * percent;
+    
+    //     // const last = lastPercent;
 
-        setLastPercent(percent);
-        if (percent > 1) {
-            setIsPlaying(false)
-        }
-        else {
-            setIsPlaying(true)
-        }
+    //     setLastPercent(percent);
+    //     if (percent > 1) {
+    //         setIsPlaying(false)
+    //     }
+    //     else {
+    //         setIsPlaying(true)
+    //     }
 
 
-        // if (last > percent) {
-        //     video.pause();
-        //     video.currentTime = stopTime;
-        //     return;
-        // }
-        if( video.currentTime >= stopTime) {
-            video.pause();
-            return;
-        }
+    //     // if (last > percent) {
+    //     //     video.pause();
+    //     //     video.currentTime = stopTime;
+    //     //     return;
+    //     // }
 
-        // console.log({percent, lastPercent, stopTime})
+    //     // if( video.currentTime >= stopTime) {
+    //     //     video.pause();
+    //     //     return;
+    //     // }
 
-        const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
-        video.play();
+    //     // console.log({percent, lastPercent, stopTime})
 
-        video.addEventListener("timeupdate", videoPlayed);
-        return () => video.removeEventListener("timeupdate", videoPlayed);
-    }, [percent, videoRef]);
+    //     // const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
+    //     if(rev){
+    //         video.currentTime -= stopTime
+    //     }else{
+    //         video.currentTime += stopTime
+    //     }
+    //     // video.play()
+
+    //     // video.addEventListener("timeupdate", videoPlayed);
+    //     // return () => video.removeEventListener("timeupdate", videoPlayed);
+    // }, [percent, videoRef]);
+
 
 
     return (
