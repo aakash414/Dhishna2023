@@ -12,6 +12,7 @@ import useMouse from "@react-hook/mouse-position";
 import {motion} from "framer-motion";
 import VideoBackground from '@/components/VideoBackground';
 import TextRevolve from '@/components/TextRevolve';
+import gsap from 'gsap';
 
 
 function Landing() {
@@ -173,69 +174,75 @@ function Landing() {
     const [rev, setRev] = useState(false)
 
     useEffect(() => {
-        // console.log("kooooooooooi");
+        // Tried to reverse video on scroll up (no smooth yet)
+        // let y = window.scrollY;
+        // let height = document.body.clientHeight;
+        // let currentPercent = y * 3 / height;
+        // const video = videoRef.current;
+        // let stopTime = 3.791606 * currentPercent;
+        // const handleScroll = (e) => {
+        //     setPercent(currentPercent);
+        //     y = window.scrollY;
+        //     height = document.body.clientHeight;
+        //     currentPercent = y * 3 / height;
+        //     stopTime = 3.791606 * currentPercent;
+        //     if (!videoRef.current || currentPercent === 0) return;
+        //     if(e.deltaY < 0){
+        //         video.currentTime -= 0.01
+        //     }else{
+        //         video.play()
+        //     }
+        // };
+        // const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
 
+        // document.addEventListener("wheel", handleScroll);
+        // video.addEventListener("timeupdate", videoPlayed);
+        // return () => document.removeEventListener("wheel", handleScroll);
         
         const handleScroll = (e) => {
             const y = window.scrollY;
             const height = document.body.clientHeight;
             const currentPercent = y * 3 / height;
             setPercent(currentPercent);
-            const video = videoRef.current;
-            const stopTime = 3.791606 * currentPercent;
-            if (!videoRef.current || currentPercent === 0) return;
-            if(e.deltaY < 0){
-                video.currentTime -= 0.01
-            }else{
-                video.currentTime += 0.01
-            }
         };
-        document.addEventListener("wheel", handleScroll);
-
+        
+        document.addEventListener("scroll", handleScroll);
         return () => document.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // useEffect(() => {
-    //     if (!videoRef.current || percent === 0) return;
+    useEffect(() => {
+        if (!videoRef.current || percent === 0) return;
 
-    //     const video = videoRef.current;
-    //     const stopTime = video.duration * percent;
-    
-    //     // const last = lastPercent;
-
-    //     setLastPercent(percent);
-    //     if (percent > 1) {
-    //         setIsPlaying(false)
-    //     }
-    //     else {
-    //         setIsPlaying(true)
-    //     }
+        const video = videoRef.current;
+        const stopTime = video.duration * percent;
 
 
-    //     // if (last > percent) {
-    //     //     video.pause();
-    //     //     video.currentTime = stopTime;
-    //     //     return;
-    //     // }
+        setLastPercent(percent);
+        if (percent > 1) {
+            setIsPlaying(false)
+        }
+        else {
+            setIsPlaying(true)
+        }
 
-    //     // if( video.currentTime >= stopTime) {
-    //     //     video.pause();
-    //     //     return;
-    //     // }
 
-    //     // console.log({percent, lastPercent, stopTime})
+        // if (last > percent) {
+        //     video.pause();
+        //     video.currentTime = stopTime;
+        //     return;
+        // }
 
-    //     // const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
-    //     if(rev){
-    //         video.currentTime -= stopTime
-    //     }else{
-    //         video.currentTime += stopTime
-    //     }
-    //     // video.play()
+        if( video.currentTime >= stopTime) {
+            video.pause();
+            return;
+        }
 
-    //     // video.addEventListener("timeupdate", videoPlayed);
-    //     // return () => video.removeEventListener("timeupdate", videoPlayed);
-    // }, [percent, videoRef]);
+        const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
+        video.play()
+
+        video.addEventListener("timeupdate", videoPlayed);
+        return () => video.removeEventListener("timeupdate", videoPlayed);
+    }, [percent, videoRef]);
 
 
 
