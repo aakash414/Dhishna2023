@@ -246,7 +246,7 @@ function Landing() {
             <Slide3/>
             <motion.div
                 variants={variants}
-                className="circle"
+                className="circle hidden md:block"
                 animate={cursorVariant}
                 transition={spring}
             >
