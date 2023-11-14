@@ -29,10 +29,10 @@ export function Slide4() {
     return (
         <div ref={componentRef}    className=' relative w-full bg-auto flex flex-row  md:bg-no-repeat bg-center md:bg-right '>
             <div className='absolute opacity-70 bottom-10 rotate-180'>
-                <Image src={line} alt="line" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] '/>
+                <Image src={line} alt="line" className='block w-[550px] lg:w-[650px] xl:w-[750px] '/>
             </div>
             <div className='absolute opacity-70 right-0 flip-horizontal top-10 '>
-                <Image src={line} alt="line" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] '/>
+                <Image src={line} alt="line" className='block w-[550px] lg:w-[650px] xl:w-[750px] '/>
             </div>
             <div className='absolute h-10 w-10'>
                 {/* fix this later */}

@@ -28,11 +28,11 @@ export function Slide9() {
   return (
     <div ref={componentRef} className=' relative w-full bg-auto md:bg-no-repeat bg-center md:bg-right '>
 
-      <div className='absolute opacity-70 top-10 '>
-        <Image src={line} alt="line" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] ' />
+      <div className='md:absolute opacity-70 top-10 '>
+        <Image src={line} alt="line" className='block w-[550px] lg:w-[650px] xl:w-[750px] ' />
       </div>
       <div className='flex flex-row'>
-        <div className='flex md:w-1/2 justify-center md:justify-end items-center h-full sm:min-h-screen md:py-36 py-10  ' >
+        <div className='flex md:w-1/2 justify-center md:justify-end items-center h-full sm:min-h-screen md:py-36 pb-10  ' >
           <div className='text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8 gap-6 z-10'>
             <p className='text-7xl  md:text-[120px] font-bold  text-center md:text-left font-thunder tracking-wide italic'>
               ROCKET
