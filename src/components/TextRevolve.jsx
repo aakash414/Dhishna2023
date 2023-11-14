@@ -17,7 +17,7 @@ const TextRevolve = () => {
             {
                 y: 200,
                 ease: "power4.out",
-                delay: 1,
+                delay: 0.5,
                 skewY: 5,
                 stagger: {
                     amount: 0.3
@@ -26,8 +26,10 @@ const TextRevolve = () => {
             .to('.line .line1', 1.5, {
                 y: -250,
                 ease: "power4.out",
-                delay: 1.5,
-                skewY: 0,
+                opacity: 0,
+                delay: 0.5,
+                skewY: 10,
+                rotationX: -100,
                 stagger: {
                     amount: 0.3
                 }
@@ -36,7 +38,7 @@ const TextRevolve = () => {
             {
                 y: 200,
                 ease: "power4.out",
-                delay: 1,
+                delay: 2,
                 skewY: 5,
                 stagger: {
                     amount: 0.3
@@ -44,9 +46,11 @@ const TextRevolve = () => {
             })
             .to('.line .line2', 1.5, {
                 y: -250,
+                opacity: 0,
                 ease: "power4.out",
-                delay: 1.5,
+                delay: 0.5,
                 skewY: 0,
+                rotationX: -100,
                 stagger: {
                     amount: 0.3
                 }
@@ -55,41 +59,43 @@ const TextRevolve = () => {
             {
                 y: 200,
                 ease: "power4.out",
-                delay: 1,
+                delay: 4,
                 skewY: 5,
                 stagger: {
                     amount: 0.3
                 }
             })
-            .to('.line .line2', 1.5, {
+            .to('.line .line3', 1.5, {
                 y: -250,
+                opacity: 0,
                 ease: "power4.out",
-                delay: 1.5,
+                delay: 0.5,
                 skewY: 0,
+                rotationX: -100,
                 stagger: {
                     amount: 0.3
                 }
             })
             ScrollTrigger.create({
                 trigger: ".line .line1",
-                start: "top 80%",
-                end: "top 20%",
+                start: "top 100%",
+                end: "top 0%",
                 animation: t1.current,
                 scrub: true,
                 markers: true,
             });
             ScrollTrigger.create({
                 trigger: ".line .line2",
-                start: "top 80%",
-                end: "top 20%",
+                start: "top 100%",
+                end: "top 0%",
                 animation: t2.current,
                 scrub: true,
                 markers: true,
             });
             ScrollTrigger.create({
                 trigger: ".line .line3",
-                start: "top 80%",
-                end: "top 20%",
+                start: "top 100%",
+                end: "top 0%",
                 animation: t3.current,
                 scrub: true,
                 markers: true,
@@ -97,15 +103,15 @@ const TextRevolve = () => {
     }, [])
   return (
     <div className='h-screen relative'>
-        <div className='fixed top-[35vh] bg-transparent flex justify-center'>
+        <div className='absolute top-[200px] bg-transparent flex justify-center'>
             <div class="container">
-                <div class="line">
+                <div class="line absolute">
                     <h1 className='line1 text-white text-[200px] font-thunder tracking-wide font-medium'>DHISHNA</h1>
                 </div>
-                <div class="line">
+                <div class="line absolute">
                     <h1 className='line2 text-white text-[200px] font-thunder tracking-wide font-medium'>2023</h1>
                 </div>
-                <div class="line">
+                <div class="line absolute">
                     <h1 className='line3 text-white text-[200px] font-thunder tracking-wide font-medium'>November</h1>
                 </div>
             </div>
