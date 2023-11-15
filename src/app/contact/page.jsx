@@ -13,7 +13,7 @@ function NavigationRow({ children }) {
 
 function NavigationItem({ phone, children }) {
   return (
-    <div className="- group relative isolate w-full border-b-[0.1px] border-gray-500  py-6 text-white sm:px-16 sm:py-16">
+    <div className="px-8 group relative isolate w-full border-b-[0.1px] border-gray-500  py-6 text-white sm:px-16 sm:py-16">
       {children}
       <p className="text-lg">{phone}</p>
     </div>
@@ -30,8 +30,8 @@ const ComingSoonCard = () => {
       </div>
       <div className="w-full font-display text-5xl font-medium tracking-tight text-white sm:w-1/2">
         <NavigationRow>
-          <NavigationItem phone="123456789">Abhiram</NavigationItem>
-          <NavigationItem phone="123456789">Dheeraj</NavigationItem>
+          <NavigationItem phone="+91 858003324">Abhiram</NavigationItem>
+          <NavigationItem phone="+91 9061071530">Acquin</NavigationItem>
         </NavigationRow>
       </div>
       <div className="flex w-full">

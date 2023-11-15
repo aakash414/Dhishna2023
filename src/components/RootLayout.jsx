@@ -67,7 +67,7 @@ function Header({
         <div className={`text-white hidden  ${expanded ? 'md:hidden' : 'flex'} font-display text-2xl md:flex gap-16`}>
           <Link href='/events'>Events</Link>
           <Link href='/workshop'>Workshop</Link>
-          <a href="mailto:cusat@dhishna.org">Contact</a>
+          <a href="/contact">Contact</a>
         </div>
         <div className="flex items-center gap-x-14">
           <Link
@@ -136,7 +136,7 @@ function Navigation() {
         <NavigationItem href="/workshop">Workshop</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="mailto:cusat@dhishna.org" >Contact</NavigationItem>
+        <NavigationItem href="/contact" >Contact</NavigationItem>
       </NavigationRow>
     </nav>
   )
