@@ -273,7 +273,7 @@ function Landing() {
                 <p className="cursorText"></p>
 
             </motion.div>
-            <div className='container'>
+            <div className='container1'>
                 <div onMouseEnter={chakraEnter} onMouseLeave={chakraLeave}>
                     <Slide4/>
                 </div>
@@ -285,7 +285,7 @@ function Landing() {
                 </div>
             </div>
             <Slide8/>
-            <div className='container'>
+            <div className='container1'>
                 <div onMouseEnter={rocketEnter} onMouseLeave={rocketLeave}>
                     <Slide9/>
                 </div>
