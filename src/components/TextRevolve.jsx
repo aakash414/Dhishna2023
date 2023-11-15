@@ -78,7 +78,7 @@ const TextRevolve = () => {
             })
             ScrollTrigger.create({
                 trigger: ".line .line1",
-                start: "top 80%",
+                start: "top 120%",
                 end: "top 20%",
                 animation: t1.current,
                 scrub: true,
@@ -106,15 +106,15 @@ const TextRevolve = () => {
         <div className='absolute top-[200px] bg-transparent flex justify-center'>
             <div class="container">
                 <div class="line">
-                    <h1 className='line1 text-white text-[200px] font-thunder tracking-wide font-medium'>DHISHNA</h1>
+                    <h1 className='line1 text-white text-[200px] font-thunder tracking-wide font-medium'>THE</h1>
                 </div>
                 <div class="line">
                     <h1 className='line2 text-white text-[200px] font-thunder tracking-wide font-medium'>
-                        2023
+                        REMARKABLE
                     </h1>
                 </div>
                 <div class="line">
-                    <h1 className='line3 text-white text-[200px] font-thunder tracking-wide font-medium'>November</h1>
+                    <h1 className='line3 text-white text-[200px] font-thunder tracking-wide font-medium'>REVIVAL</h1>
                 </div>
             </div>
         </div>
