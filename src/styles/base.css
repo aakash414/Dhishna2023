@@ -296,7 +296,7 @@ hr{
   font-weight: bold;
 }
 
-.container{
+.container1{
   cursor: none;
 }
 
@@ -403,20 +403,33 @@ hr{
 }
 
 
-
 @keyframes up-down {
-  0%, 100% {
-    transform: translateY(0);
+  0% {
+    transform: translateY(-40px);
   }
-  50% {
+  15% {
+    transform: translateY(0px);
+  }
+  35% {
     transform: translateY(-30px);
+  }
+  65% {
+    transform: translateY(0px);
+  }
+  85% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
 
 
+
+
 .bounce {
-  animation: up-down 2s infinite;
+  animation: up-down 2s ;
 }
 
 .video-background {

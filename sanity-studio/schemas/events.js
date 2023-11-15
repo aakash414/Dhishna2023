@@ -23,7 +23,6 @@ export default defineType({
       name: 'register',
       title: 'Link',
       type: 'string',
-      validation : Rule => Rule.required(),
     }),
     defineField({
       name: 'event_type',
