@@ -1,19 +1,53 @@
-import React from 'react';
+import React from 'react'
+import { Container } from '@/components/Container'
+import { SocialMedia } from '@/components/SocialMedia'
+function NavigationRow({ children }) {
+  return (
+    <div className="w-full sm:bg-neutral-950">
+      <div className="w-full">
+        <div className="grid grid-cols-1">{children}</div>
+      </div>
+    </div>
+  )
+}
+
+function NavigationItem({ phone, children }) {
+  return (
+    <div className="- group relative isolate w-full border-b-[0.1px] border-gray-500  py-6 text-white sm:px-16 sm:py-16">
+      {children}
+      <p className="text-lg">{phone}</p>
+    </div>
+  )
+}
 
 const ComingSoonCard = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-80 text-center">
-        <h1 className="text-3xl font-extrabold text-gray-800 mb-4">Coming Soon</h1>
-        <p className="text-gray-600 mb-6">We&apos;re working on something amazing! Stay tuned for updates.</p>
-        <div className="flex justify-center">
-          {/* <div className="bg-blue-500 hover:bg-blue-600 text-white rounded-md px-4 py-2 cursor-pointer">
-            Subscribe
-          </div> */}
-        </div>
+    <div className="mt-[150px] flex min-h-screen w-full flex-col items-center justify-center md:justify-start ">
+      <div className="bg-black p-4 text-white">
+        <h2 className="font-display text-4xl font-medium tracking-tight">
+          Contact Us
+        </h2>
+      </div>
+      <div className="w-full font-display text-5xl font-medium tracking-tight text-white sm:w-1/2">
+        <NavigationRow>
+          <NavigationItem phone="123456789">Abhiram</NavigationItem>
+          <NavigationItem phone="123456789">Dheeraj</NavigationItem>
+        </NavigationRow>
+      </div>
+      <div className="flex w-full">
+        <Container>
+          <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-4 sm:pt-16">
+            <div className="sm:border-l sm:border-transparent sm:pl-16">
+              <h2 className="font-display text-base font-semibold text-white">
+                Follow us
+              </h2>
+              <SocialMedia className="mt-6" invert />
+            </div>
+          </div>
+        </Container>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ComingSoonCard;
+export default ComingSoonCard

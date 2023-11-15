@@ -43,8 +43,7 @@ export function Slide7() {
         <div className='py-8 relative h-screen overflow-hidden w-full'>
             <div className='absolute w-full h-full flex items-center justify-center'>
             <Link href='/workshop'>
-                <p className='text-white text-4xl sm:text-2xl text-center text-semibold -translate-y-32 px-2  bg-[#AD13B2] font-
-Satoshi'>
+                <p className='text-white text-4xl sm:text-2xl text-center text-semibold -translate-y-32 px-2  bg-[#AD13B2] font-Satoshi'>
                     WORKSHOPS
                 </p>
                 </Link>
