@@ -106,17 +106,17 @@ const TextRevolve = () => {
         <div className='absolute top-[200px] bg-transparent flex justify-center'>
             <div class="container">
                 <div class="line">
-                    <h1 className='line1 text-white text-[100px] md:text-[200px] font-thunder tracking-wide font-medium'>THE</h1>
+                    <h1 className='line1 text-white text-[70px] sm:text-[100px] md:text-[200px] font-thunder tracking-wide font-medium'>THE</h1>
                 </div>
                 <div class="line">
-                    <h1 className='line2 text-white text-[100px] md:text-[200px] font-thunder tracking-wide font-medium'>
+                    <h1 className='line2 text-white text-[70px] sm:text-[100px] md:text-[200px] font-thunder tracking-wide font-medium'>
                         REMARKABLE
                     </h1>
                 </div>
                 <div class="line">
-                    <h1 className='line3 text-white text-[100px] md:text-[200px] font-thunder tracking-wide font-medium'>REVIVAL</h1>
+                    <h1 className='line3 text-white text-[70px] sm:text-[100px] md:text-[200px] font-thunder tracking-wide font-medium'>REVIVAL</h1>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
   )
