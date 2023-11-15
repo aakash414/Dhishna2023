@@ -12,7 +12,6 @@ import useMouse from "@react-hook/mouse-position";
 import {motion} from "framer-motion";
 import VideoBackground from '@/components/VideoBackground';
 import TextRevolve from '@/components/TextRevolve';
-import gsap from 'gsap';
 
 
 function Landing() {
