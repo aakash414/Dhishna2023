@@ -8,12 +8,25 @@ function Page() {
   const [cas, setCas] = React.useState([])
 
   React.useEffect(() => {
-    fetch('https://api.dhishna.org/api/ca/topten')
-      .then((data) => data.json())
-      .then((cas) => {
-        const filtered = cas.context.filter((ca) => ca.points != 0)
-        setCas(filtered)
-      }, [])
+    // fetch('https://api.dhishna.org/api/ca/topten')
+    //   .then((data) => data.json())
+    //   .then((cas) => {
+    //     const filtered = cas.context.filter((ca) => ca.points != 0)
+    //     setCas(filtered)
+    //   }, [])
+
+    setCas([
+      { name: 'Jackson Chen', college: 'Community College', points: 95 },
+      { name: 'Zara Khan', college: 'Business School', points: 94 },
+      { name: 'Aisha Patel', college: 'State College', points: 92 },
+      { name: 'Emma Singh', college: 'Engineering Institute', points: 91 },
+      { name: 'Sofia Rodriguez', college: 'Tech University', points: 89 },
+      { name: 'Lucas Nguyen', college: 'Liberal Arts College', points: 88 },
+      { name: 'Aiden Garcia', college: 'Medical School', points: 87 },
+      { name: 'Mohammed Ahmed', college: 'City University', points: 85 },
+      { name: 'Mia Gupta', college: 'Arts Academy', points: 80 },
+      { name: 'Liam Kim', college: 'International Institute', points: 78 },
+    ])
   }, [])
 
   return (
