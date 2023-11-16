@@ -1,0 +1,12 @@
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .line {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}

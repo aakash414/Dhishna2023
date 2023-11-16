@@ -11,6 +11,7 @@ import Slide5 from '@/components/Slide5';
 import useMouse from "@react-hook/mouse-position";
 import {motion} from "framer-motion";
 import VideoBackground from '@/components/VideoBackground';
+import TextRevolve from '@/components/TextRevolve';
 
 
 function Landing() {
@@ -169,31 +170,51 @@ function Landing() {
     const [percent, setPercent] = useState(0);
     const [lastPercent, setLastPercent] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [rev, setRev] = useState(false)
 
     useEffect(() => {
-        // console.log("kooooooooooi");
+        // Tried to reverse video on scroll up (no smooth yet)
+        // let y = window.scrollY;
+        // let height = document.body.clientHeight;
+        // let currentPercent = y * 3 / height;
+        // const video = videoRef.current;
+        // let stopTime = 3.791606 * currentPercent;
+        // const handleScroll = (e) => {
+        //     setPercent(currentPercent);
+        //     y = window.scrollY;
+        //     height = document.body.clientHeight;
+        //     currentPercent = y * 3 / height;
+        //     stopTime = 3.791606 * currentPercent;
+        //     if (!videoRef.current || currentPercent === 0) return;
+        //     if(e.deltaY < 0){
+        //         video.currentTime -= 0.01
+        //     }else{
+        //         video.play()
+        //     }
+        // };
+        // const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
 
+        // document.addEventListener("wheel", handleScroll);
+        // video.addEventListener("timeupdate", videoPlayed);
+        // return () => document.removeEventListener("wheel", handleScroll);
         
-        const handleScroll = () => {
+        const handleScroll = (e) => {
             const y = window.scrollY;
             const height = document.body.clientHeight;
             const currentPercent = y * 3 / height;
-
             setPercent(currentPercent);
         };
+        
         document.addEventListener("scroll", handleScroll);
-
         return () => document.removeEventListener("scroll", handleScroll);
     }, []);
 
     useEffect(() => {
-        // console.log("kooooooooooi");
-        console.log({percent, lastPercent});
         if (!videoRef.current || percent === 0) return;
 
         const video = videoRef.current;
         const stopTime = video.duration * percent;
-        // const last = lastPercent;
+
 
         setLastPercent(percent);
         if (percent > 1) {
@@ -209,19 +230,19 @@ function Landing() {
         //     video.currentTime = stopTime;
         //     return;
         // }
+
         if( video.currentTime >= stopTime) {
             video.pause();
             return;
         }
 
-        // console.log({percent, lastPercent, stopTime})
-
         const videoPlayed = () => video.currentTime > stopTime ? video.pause() : null;
-        video.play();
+        video.play()
 
         video.addEventListener("timeupdate", videoPlayed);
         return () => video.removeEventListener("timeupdate", videoPlayed);
     }, [percent, videoRef]);
+
 
 
     return (
@@ -240,18 +261,19 @@ function Landing() {
         ></video>}
             {isMobile && <VideoBackground/>}
             <Slide1/>
+            <TextRevolve/>
             <Slide2/>
             <Slide3/>
             <motion.div
                 variants={variants}
-                className="circle"
+                className="circle hidden md:block"
                 animate={cursorVariant}
                 transition={spring}
             >
                 <p className="cursorText"></p>
 
             </motion.div>
-            <div className='container'>
+            <div className='container1'>
                 <div onMouseEnter={chakraEnter} onMouseLeave={chakraLeave}>
                     <Slide4/>
                 </div>
@@ -263,7 +285,7 @@ function Landing() {
                 </div>
             </div>
             <Slide8/>
-            <div className='container'>
+            <div className='container1'>
                 <div onMouseEnter={rocketEnter} onMouseLeave={rocketLeave}>
                     <Slide9/>
                 </div>
