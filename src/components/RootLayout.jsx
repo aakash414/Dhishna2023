@@ -1,6 +1,5 @@
 'use client'
-
-import {
+import React, {
   createContext,
   useContext,
   useEffect,
@@ -12,14 +11,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
-
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Footer } from '@/components/Footer'
-import { GridPattern } from '@/components/GridPattern'
-import { Logo, Logomark } from '@/components/Logo'
-import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
+import Image from 'next/image'
 
 const RootLayoutContext = createContext(null)
 
@@ -49,7 +43,15 @@ function Header({
   invert = false,
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
+  let pathname;
+  useEffect(()=>{
+         pathname = window.location.pathname;
+  },[pathname])
 
+  console.log('pathname',pathname, pathname === "/events")
+  if (pathname === "/events" || pathname === "/workshop" ) {
+    return <div className='hidden'></div>;
+  }
   return (
     <Container>
       <div className="flex items-center justify-between">
@@ -59,21 +61,25 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logomark
-            className="h-8 sm:hidden"
-            invert={invert}
-            filled={logoHovered}
-          />
-          <Logo
-            className="hidden h-8 sm:block"
-            invert={invert}
-            filled={logoHovered}
-          />
+          <Image src='/dhishna-white-logo.svg' alt="logo" className="md:hidden" width={100} height={100} />
+
         </Link>
-        <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
-            Contact us
-          </Button>
+
+        <div className={`text-white hidden  ${expanded ? 'md:hidden' : 'flex'} font-display text-2xl md:flex gap-16`}>
+          <Link href='/events'>Events</Link>
+          <Link href='/workshop'>Workshop</Link>
+          <a href="mailto:cusat@dhishna.org">Contact</a>
+        </div>
+        <div className="flex items-center gap-x-14">
+          <Link
+            href="/"
+            aria-label="Home"
+            onMouseEnter={() => setLogoHovered(true)}
+            onMouseLeave={() => setLogoHovered(false)}
+            className='md:block hidden'
+          >
+            <Image src='/dhishna-white-logo.svg' alt="logo" className="" width={100} height={100} />
+          </Link>
           <button
             ref={toggleRef}
             type="button"
@@ -81,7 +87,7 @@ function Header({
             aria-expanded={expanded ? 'true' : 'false'}
             aria-controls={panelId}
             className={clsx(
-              'group -m-2.5 rounded-full p-2.5 transition',
+              'md:hidden group -m-2.5 rounded-full p-2.5 transition',
               invert ? 'hover:bg-white/10' : 'hover:bg-neutral-950/10',
             )}
             aria-label="Toggle navigation"
@@ -91,7 +97,7 @@ function Header({
                 'h-6 w-6',
                 invert
                   ? 'fill-white group-hover:fill-neutral-200'
-                  : 'fill-neutral-950 group-hover:fill-neutral-700',
+                  : 'fill-white group-hover:fill-neutral-400',
               )}
             />
           </button>
@@ -127,12 +133,11 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/events">Events</NavigationItem>
+        <NavigationItem href="/workshop">Workshop</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/blog">Blog</NavigationItem>
+        <NavigationItem href="mailto:cusat@dhishna.org" >Contact</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -161,81 +166,78 @@ function RootLayoutInner({ children }) {
     return () => {
       window.removeEventListener('click', onClick)
     }
-  }, [])
+  }, []) // Replace this with your actual reference
+
+  useEffect(() => {
+    if (expanded) {
+      const timeoutId = setTimeout(() => {
+        closeRef.current?.focus({ preventScroll: true });
+      });
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [expanded, closeRef]);
+
+
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
-      <header>
-        <div
-          className="absolute left-0 right-0 top-2 z-40 pt-14"
-          aria-hidden={expanded ? 'true' : undefined}
-          inert={expanded ? '' : undefined}
-        >
-          <Header
+      <div
+        className="absolute left-0 right-0 top-2  z-40 pt-14"
+        aria-hidden={expanded ? 'true' : undefined}
+        inert={expanded ? '' : undefined}
+      >
+      <Header
             panelId={panelId}
             icon={MenuIcon}
             toggleRef={openRef}
             expanded={expanded}
-            onToggle={() => {
-              setExpanded((expanded) => !expanded)
-              window.setTimeout(() =>
-                closeRef.current?.focus({ preventScroll: true }),
-              )
-            }}
+            onToggle={() => setExpanded((prevExpanded) => !prevExpanded)}
           />
-        </div>
+      </div>
 
-        <motion.div
-          layout
-          id={panelId}
-          style={{ height: expanded ? 'auto' : '0.5rem' }}
-          className="relative z-50 overflow-hidden bg-neutral-950 pt-2"
-          aria-hidden={expanded ? undefined : 'true'}
-          inert={expanded ? undefined : ''}
-        >
-          <motion.div layout className="bg-neutral-800">
-            <div ref={navRef} className="bg-neutral-950 pb-16 pt-14">
-              <Header
-                invert
-                panelId={panelId}
-                icon={XIcon}
-                toggleRef={closeRef}
-                expanded={expanded}
-                onToggle={() => {
-                  setExpanded((expanded) => !expanded)
-                  window.setTimeout(() =>
-                    openRef.current?.focus({ preventScroll: true }),
-                  )
-                }}
-              />
-            </div>
-            <Navigation />
-            <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-800">
-              <Container>
-                <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
-                  <div>
-                    <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
-                    </h2>
-                    <Offices
-                      invert
-                      className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
-                    />
-                  </div>
-                  <div className="sm:border-l sm:border-transparent sm:pl-16">
-                    <h2 className="font-display text-base font-semibold text-white">
-                      Follow us
-                    </h2>
-                    <SocialMedia className="mt-6" invert />
-                  </div>
+      <motion.div
+        layout
+        id={panelId}
+        style={{ height: expanded ? 'auto' : '0.01rem' }}
+        className="relative z-50 overflow-hidden bg-neutral-950"
+        aria-hidden={expanded ? undefined : 'true'}
+        inert={expanded ? undefined : ''}
+      >
+        <motion.div layout className="bg-black">
+          <div ref={navRef} className=" pb-16 pt-14  z-10">
+            <Header
+              invert
+              panelId={panelId}
+              icon={XIcon}
+              toggleRef={closeRef}
+              expanded={expanded}
+              onToggle={() => {
+                setExpanded((expanded) => !expanded)
+                window.setTimeout(() =>
+                  openRef.current?.focus({ preventScroll: true }),
+                )
+              }}
+            />
+          </div>
+          <Navigation />
+          <div className="relative bg-neutral-950 before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-neutral-800">
+            <Container>
+              <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
+
+                <div className="sm:border-l sm:border-transparent sm:pl-16">
+                  <h2 className="font-display text-base font-semibold text-white">
+                    Follow us
+                  </h2>
+                  <SocialMedia className="mt-6" invert />
                 </div>
-              </Container>
-            </div>
-          </motion.div>
+              </div>
+            </Container>
+          </div>
         </motion.div>
-      </header>
+      </motion.div>
 
-          <main className="w-full flex-auto">{children}</main>
+      <main className="w-full flex-auto">{children}</main>
 
     </MotionConfig>
   )

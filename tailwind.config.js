@@ -18,6 +18,16 @@ module.exports = {
       '7xl': ['4rem', { lineHeight: '4.5rem' }],
     },
     extend: {
+      keyframes: {
+        shine: {
+          to: {
+            backgroundPosition: '200% center',
+          },
+        },
+      },
+      animation: {
+        shine: 'shine 1s linear infinite',
+      },
       borderRadius: {
         '4xl': '2.5rem',
       },
@@ -25,13 +35,19 @@ module.exports = {
         sans: ['Mona Sans', ...defaultTheme.fontFamily.sans],
         display: [
           ['Mona Sans', ...defaultTheme.fontFamily.sans],
-          { fontVariationSettings: '"wdth" 125' },
+          { fontVariationSettings: '"width" 125' },
         ],
+        thunder: ['Thunder', 'sans'],
+        thunder1: ['Thunder1', 'sans'],
+        satoshi: ['Satoshi', 'sans'],
       },
+    },
+    backgroundImage: {
+      vector: "url('./src/images/D2023.png')",
     },
   },
   plugins: [
-    // require('@codaworks/react-glow/tailwind')
+    // ... other plugins
   ],
-  
+
 }
