@@ -22,7 +22,7 @@ function NavigationItem({ phone, children }) {
 
 const ComingSoonCard = () => {
   return (
-    <div className="mt-[150px] flex min-h-screen w-full flex-col items-center justify-center md:justify-start ">
+    <div className="mt-10 md:mt-[150px] flex min-h-screen w-full flex-col items-center justify-center md:justify-start ">
       <div className="bg-black p-4 text-white">
         <h2 className="font-display text-4xl font-medium tracking-tight">
           Contact Us

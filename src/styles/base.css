@@ -71,6 +71,19 @@ body {
   text-shadow: none;
 }
 
+.event-bg::before {
+  content: "";
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: black;  /* Color of the stroke */
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: none;
+}
+
 
 
 .events-scroll {
