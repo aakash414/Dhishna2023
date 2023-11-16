@@ -5,15 +5,36 @@ import Link from 'next/link'
 
 
 export function Slide8() {
+    const [animate, setAnimate] = React.useState(false)
+    const componentRef = React.useRef(null);
+
+    React.useEffect(() => {
+      const handleScroll = () => {
+          const element = componentRef.current;
+  
+          if (element) {
+              const rect = element.getBoundingClientRect();
+              if (rect.top < window.innerHeight - 600  && rect.bottom >= 0) {
+                  setAnimate(true)
+                  console.log("first")
+              } else {
+                  setAnimate(false)
+                  console.log("test")
+              }
+          }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
     return (
-        // change font to thunder and fix size
-        <div className='w-full h-full px-10 py-16  z-10 relative'>
+        <div ref={componentRef} className='w-full h-full px-10 py-16  z-10 relative'>
             <p className='text-white text-7xl sm:text-[120px] text-center font-bold italic py-8 font-thunder'>ROBO GAMES</p>
             <div className='md:hidden w-full justify-center text-white flex  items-center pb-10'>
                 <Image
                     src={roboImage}
                     alt="roboimage"
-                    className="bounce"
+                    className={`${animate && 'bounce'}`}
                     width={600}
                     height={300}
                     />
@@ -45,7 +66,7 @@ export function Slide8() {
                 <Image
                     src={roboImage}
                     alt="roboimage"
-                    className="bounce"
+                    className={`${animate && 'bounce'}`}
                     width={600}
                     height={300}
                     />
