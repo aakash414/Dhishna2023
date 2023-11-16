@@ -49,7 +49,8 @@ function Landing() {
                 type: "spring",
                 mass: 0.6
             },
-            cursor: "pointer"
+            cursor: "pointer",
+            rotate:180
         },
         chakra: {
             opacity: 1,
@@ -59,7 +60,8 @@ function Landing() {
             width: 80,
             fontSize: "18px",
             x: mouseXPosition - 32,
-            y: mouseYPosition - 32
+            y: mouseYPosition - 32,
+            rotate:360
         },
         workshop: {
             opacity: 1,
@@ -69,7 +71,8 @@ function Landing() {
             width: 64,
             fontSize: "32px",
             x: mouseXPosition - 48,
-            y: mouseYPosition - 48
+            y: mouseYPosition - 48,
+            rotate:360
         },
         proshow: {
             opacity: 1,
@@ -79,7 +82,8 @@ function Landing() {
             width: 72,
             fontSize: "32px",
             x: mouseXPosition - 48,
-            y: mouseYPosition - 48
+            y: mouseYPosition - 48,
+            rotate:180
         },
         rocket: {
             opacity: 1,
@@ -90,7 +94,8 @@ function Landing() {
             fontSize: "32px",
             x: mouseXPosition - 48,
             y: mouseYPosition - 48,
-            cursor: "none"
+            cursor: "none",
+            rotate:180
         },
         robo: {
             opacity: 1,
