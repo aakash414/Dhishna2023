@@ -274,19 +274,22 @@ function Landing() {
 
             </motion.div>
             <div className='container1'>
-                <div onMouseEnter={chakraEnter} onMouseLeave={chakraLeave}>
-                    <Slide4/>
+                <div id="chakra" onMouseEnter={chakraEnter} onMouseLeave={chakraLeave}>
+                    <Slide4 />
                 </div>
-                <div onMouseEnter={proshowEnter} onMouseLeave={proshowLeave}>
+                <div id="proshow" onMouseEnter={proshowEnter} onMouseLeave={proshowLeave}>
                     <Slide5/>
                 </div>
-                <div onMouseEnter={workshopEnter} onMouseLeave={workshopLeave}>
+                <div  onMouseEnter={workshopEnter} onMouseLeave={workshopLeave}>
                     <Slide7/>
                 </div>
             </div>
+            <div id="robo">
+
             <Slide8/>
+            </div>
             <div className='container1'>
-                <div onMouseEnter={rocketEnter} onMouseLeave={rocketLeave}>
+                <div id="rocket" onMouseEnter={rocketEnter} onMouseLeave={rocketLeave}>
                     <Slide9/>
                 </div>
             </div>

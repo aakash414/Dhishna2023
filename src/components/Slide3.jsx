@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 export function Slide3() {
 
@@ -58,16 +58,24 @@ export function Slide3() {
             </div>
             <div className=" flex text-[13px] flex-row justify-around font-satoshi gap-x-5 text-white lg:-mt-24 z-10">
                 <div>
-                    <p>CHAKRA</p>
+                    <a href='#chakra'>
+                        <p>CHAKRA</p>
+                    </a>
                 </div>
                 <div>
-                    <p>PRO SHOW</p>
+                    <a href='#proshow'>
+                        <p>PRO SHOW</p>
+                    </a>
                 </div>
                 <div>
-                    <p>ROBO GAMES</p>
+                    <a href='#robo'>
+                        <p>ROBO GAMES</p>
+                    </a>
                 </div>
                 <div>
-                    <p>ROCKET</p>
+                    <a href='#rocket'>
+                        <p>ROCKET</p>
+                    </a>
                 </div>
             </div>
         </div>
