@@ -14,11 +14,6 @@ function Page() {
         return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
-    // const builder = imageUrlBuilder(client)
-
-    // function urlFor(source) {
-    //     return builder.image(source);
-    // }
     const builder = imageUrlBuilder(client);
 
     function urlFor(source) {
@@ -54,9 +49,10 @@ function Page() {
                 setData(filteredData);
                 // console.log("Received filtered data:", filteredData);
                 setLoading(false);
+                console.log("data",data)
 
             } else {
-                setLoading(false);
+                setLoading(true);
                 // console.error("Data not found for slug:", slug);
             }
         })
@@ -64,9 +60,15 @@ function Page() {
                 console.error("Error fetching data:", error);
                 setLoading(false);
             });
+       
     }, []);
 
-    const slug = window.location.href.split('/').pop();
+    let slug;
+
+    useEffect(()=>{
+        slug = window.location.href.split('/').pop();
+    },[])
+
     console.log("slug",slug);
     console.log("data",data)
         // useEffect(() => {
@@ -89,7 +91,6 @@ function Page() {
     //         })
     //         .catch(console.error);
     // }, [slug]);
-
     return (
         <div className="py-24 sm:py-32 bg-gray-950">
             <div className="px-6 mt-8 lg:px-8">

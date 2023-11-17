@@ -43,8 +43,11 @@ function Header({
   invert = false,
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
-  const pathname = window.location.pathname;
-  console.log('pathname',pathname, pathname === "/events")
+  let pathname;
+  useEffect(()=>{
+         pathname = window.location.pathname;
+  },[pathname])
+
   if (pathname === "/events" || pathname === "/workshop" ) {
     return <div className='hidden'></div>;
   }
@@ -64,7 +67,7 @@ function Header({
         <div className={`text-white hidden  ${expanded ? 'md:hidden' : 'flex'} font-display text-2xl md:flex gap-16`}>
           <Link href='/events'>Events</Link>
           <Link href='/workshop'>Workshop</Link>
-          <Link href='/contact'>Contact</Link>
+          <a href="/contact">Contact</a>
         </div>
         <div className="flex items-center gap-x-14">
           <Link
@@ -133,7 +136,7 @@ function Navigation() {
         <NavigationItem href="/workshop">Workshop</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/contact">Contact</NavigationItem>
+        <NavigationItem href="/contact" >Contact</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -162,7 +165,19 @@ function RootLayoutInner({ children }) {
     return () => {
       window.removeEventListener('click', onClick)
     }
-  }, [])
+  }, []) // Replace this with your actual reference
+
+  useEffect(() => {
+    if (expanded) {
+      const timeoutId = setTimeout(() => {
+        closeRef.current?.focus({ preventScroll: true });
+      });
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [expanded, closeRef]);
+
+
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
@@ -171,18 +186,13 @@ function RootLayoutInner({ children }) {
         aria-hidden={expanded ? 'true' : undefined}
         inert={expanded ? '' : undefined}
       >
-        <Header
-          panelId={panelId}
-          icon={MenuIcon}
-          toggleRef={openRef}
-          expanded={expanded}
-          onToggle={() => {
-            setExpanded((expanded) => !expanded)
-            window.setTimeout(() =>
-              closeRef.current?.focus({ preventScroll: true }),
-            )
-          }}
-        />
+      <Header
+            panelId={panelId}
+            icon={MenuIcon}
+            toggleRef={openRef}
+            expanded={expanded}
+            onToggle={() => setExpanded((prevExpanded) => !prevExpanded)}
+          />
       </div>
 
       <motion.div

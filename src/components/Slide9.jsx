@@ -11,13 +11,11 @@ export function Slide9() {
   React.useEffect(() => {
     const handleScroll = () => {
         const element = componentRef.current;
-        console.log("element9",element);
 
         if (element) {
             const rect = element.getBoundingClientRect();
             if (rect.top < window.innerHeight - 600  && rect.bottom >= 0) {
                 setAnimate(true)
-                console.log("first")
             } else {
                 setAnimate(false)
             }
@@ -30,12 +28,12 @@ export function Slide9() {
   return (
     <div ref={componentRef} className=' relative w-full bg-auto md:bg-no-repeat bg-center md:bg-right '>
 
-      <div className='absolute opacity-70 top-10 '>
-        <Image src={line} alt="line" className='hidden md:block w-[550px] lg:w-[650px] xl:w-[750px] ' />
+      <div className='md:absolute opacity-70 top-10 '>
+        <Image src={line} alt="line" className='block w-[550px] lg:w-[650px] xl:w-[750px] ' />
       </div>
       <div className='flex flex-row'>
-        <div className='flex md:w-1/2 justify-center md:justify-end items-center h-full sm:min-h-screen py-36' >
-          <div className='text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8 gap-6'>
+        <div className='flex md:w-1/2 justify-center md:justify-end items-center h-full sm:min-h-screen md:py-36 pb-10  ' >
+          <div className='text-white flex flex-col md:max-w-lg lg:max-w-3xl px-8 sm:px-8 gap-6 z-10'>
             <p className='text-7xl  md:text-[120px] font-bold  text-center md:text-left font-thunder tracking-wide italic'>
               ROCKET
             </p>
@@ -45,7 +43,7 @@ export function Slide9() {
              feet in the air with precision-engineered solid motor rockets.</p>
           </div>
         </div>
-        <div className=' absolute z-[-1] md:z-0 bottom-0 flex items-end md:relative md:block h-full my-auto' >
+        <div className=' absolute z-0 md:z-0 botto0 flex items-end md:relative md:block h-full my-auto' >
 
           <p className='hidden md:block text-5xl sm:text-6xl  md:text-[120px] font-bold font-thunder opacity-80 italic outline -rotate-90 leading-none'>
             ROCKET

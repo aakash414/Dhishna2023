@@ -87,7 +87,7 @@ const filteredData = data.filter(workshop =>
   console.log(data)
   return (
     <div className='bg-black z-10'>
-      <div className='mx-auto  '>
+      <div className='mt-[100px] md:mx-auto md:mt-0'>
         <Workshoptitle/>
       </div>
       {/*  <div className='h-30 w-screen flex justify-center items-center top-0 '>*/}

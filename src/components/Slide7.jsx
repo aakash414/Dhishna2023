@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React, {useEffect, useState} from 'react';
 import Marquee from 'react-fast-marquee';
 
@@ -39,12 +40,13 @@ export function Slide7() {
     const isScrollingDown = scrollDirection === 'down';
 
     return (
-        <div className='py-8 relative h-screen overflow-hidden'>
+        <div className='py-8 relative h-screen overflow-hidden w-full'>
             <div className='absolute w-full h-full flex items-center justify-center'>
-                <p className='text-white text-4xl sm:text-2xl text-center text-semibold -translate-y-32 px-2  bg-[#AD13B2] font-
-Satoshi'>
+            <Link href='/workshop'>
+                <p className='text-white text-4xl sm:text-2xl text-center text-semibold -translate-y-32 px-2  bg-[#AD13B2] font-Satoshi'>
                     WORKSHOPS
                 </p>
+                </Link>
                 <div
                     className='absolute w-full transform -skew-y-12 font-Thunder  italic font-weight-500 text-4xl font-bold whitespace-pre'>
                     <Marquee

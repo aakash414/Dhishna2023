@@ -28,8 +28,11 @@ const WorkshopInfo = ({position, data}) => {
                     </div>
                 )}
                 {position === 3 && (
-                    <div className="text-sm p-2  font-satoshi font-bold py-20 w-full h-full">
+                    <div className="font-satoshi font-bold  w-full h-full flex flex-row ">
+                        <p className='text-sm flex items-end leading-none '>
+
                         {data?.title}
+                        </p>
                     </div>
                 )}
             </div>

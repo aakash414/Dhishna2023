@@ -14,15 +14,10 @@ function Page() {
         return new Date(dateString).toLocaleDateString(undefined, options);
     }
 
-    // const builder = imageUrlBuilder(client)
-
-    // function urlFor(source) {
-    //     return builder.image(source);
-    // }
     const builder = imageUrlBuilder(client);
 
     function urlFor(source) {
-        // console.log("source",source)
+       // console.log("source",source)
         return builder.image(source);
     }
 
@@ -45,31 +40,56 @@ function Page() {
         }`
             )
             .then((eventData) => {
-                // console.log("Received data:", eventData);
-                // Filter the data to find the item with a matching event_code
-                const filteredData = eventData.filter((event) => event.event_code == slug);
+               // console.log("Received data:", eventData);
+            // Filter the data to find the item with a matching event_code
+            const filteredData = eventData.filter((event) => event.event_code == slug);
 
-                if (filteredData.length > 0) {
-                    setData(filteredData);
-                    // console.log("Received filtered data:", filteredData);
-                    setLoading(false);
+            if (filteredData.length > 0) {
+                setData(filteredData);
+                // console.log("Received filtered data:", filteredData);
+                setLoading(false);
+                console.log("data",data)
 
-                } else {
-                    setLoading(false);
-                    // console.error("Data not found for slug:", slug);
-                }
-            })
+            } else {
+                setLoading(true);
+                // console.error("Data not found for slug:", slug);
+            }
+        })
             .catch((error) => {
                 console.error("Error fetching data:", error);
                 setLoading(false);
             });
+       
     }, []);
 
-    const slug = window.location.href.split('/').pop();
+    let slug;
+
+    useEffect(()=>{
+        slug = window.location.href.split('/').pop();
+    },[])
+
     console.log("slug",slug);
     console.log("data",data)
-
-
+        // useEffect(() => {
+    //     // Fetch data of the event using the slug
+    //     client
+    //         .fetch(
+    //             `*[_type == "workshop" && event_code == "${slug}"]{
+    //       title,
+    //       event_code,
+    //       icon,
+    //       details,
+    //       start_date,
+    //       price,
+    //       venue
+    //     }`
+    //         )
+    //         .then((data) => {
+    //             setData(data);
+    //             console.log("Received filtered data:", data)
+    //         })
+    //         .catch(console.error);
+    // }, [slug]);
     return (
         <div className="py-24 sm:py-32 bg-gray-950">
             <div className="px-6 mt-8 lg:px-8">
@@ -124,7 +144,13 @@ function Page() {
                                         </div>
                                     </div>
                                 </div>
-
+                               {data[0].register &&  <div className="flex lg:justify-start justify-center mt-6">
+                                    <a href={data[0].register} target="_blank" >
+                                <button type="button" className="text-gray-200 bg-gray-500/25 border-2  hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-semibold rounded-lg text-2xl font-satoshi px-5 py-2.5 text-center inline-flex justify-self-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mt-4 mb-2" >
+                                    Register Here
+                                </button>
+                                    </a>
+                                </div>}
                             </div>
                         </div>
                     )
@@ -133,6 +159,7 @@ function Page() {
         </div>
     );
 }
+
 
 export default Page;
 
