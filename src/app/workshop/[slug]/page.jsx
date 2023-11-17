@@ -41,7 +41,8 @@ function Page() {
           price,
           venue,
           ticket_end_date,
-          register
+          register,
+          terms_and_conditions
         }`
             )
             .then((eventData) => {
@@ -96,7 +97,7 @@ function Page() {
                     <p>Loading...</p>
                 ) : (
                     data && (
-                        <div className="mx-10 flex lg:flex-row flex-col justify-center items-start gap-x-16 gap-y-14 md:gap-y-14 sm:gap-y-8  lg:mx-0 lg:max-w-none ">
+                        <div className="md:mx-10 mx-4 flex lg:flex-row flex-col justify-center items-start gap-x-16 gap-y-14 md:gap-y-14 sm:gap-y-8  lg:mx-0 lg:max-w-none  ">
                             <div className="overflow-hidden h-auto w-auto rounded-3xl bg-gray-900 shadow-2xl">
                                 {/*<img className="object-cover" src={urlFor(data[0].icon).width(500).height(300).url()} alt="" />*/}
 
@@ -113,6 +114,7 @@ function Page() {
                                     </h1>
                                     <div className="max-w-xl">
                                         <p className="mt-6">{data[0].details}</p>
+                                        <p className="mt-6">{data[0].terms_and_conditions}</p>
                                     </div>
                                 </div>
                                 <div className="mt-8 lg:col-span-2 col-span-1 border-t border-gray-300/10 pt-10 sm:col-span-4 font-satoshi">
