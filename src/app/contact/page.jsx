@@ -33,6 +33,9 @@ const ComingSoonCard = () => {
           <NavigationItem phone="+91 858003324">Abhiram</NavigationItem>
           <NavigationItem phone="+91 9061071530">Acquin</NavigationItem>
         </NavigationRow>
+        <h2 className="font-display text-xl p-8 font-semibold text-white">
+        Email: support@dhishna.org
+        </h2>
       </div>
       <div className="flex w-full">
         <Container>
