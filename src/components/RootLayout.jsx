@@ -68,6 +68,7 @@ function Header({
           <Link href='/events'>Events</Link>
           <Link href='/workshop'>Workshop</Link>
           <a href="/contact">Contact</a>
+          <Link href='https://docs.google.com/forms/d/e/1FAIpQLSerXAJr_ARrHu06Ic_3Ef1w984wu-7mw68FEjNamHpBieQeQg/viewform'>Need a Stay?</Link>
         </div>
         <div className="flex items-center gap-x-14">
           <Link
@@ -137,6 +138,7 @@ function Navigation() {
       </NavigationRow>
       <NavigationRow>
         <NavigationItem href="/contact" >Contact</NavigationItem>
+        <NavigationItem href="https://docs.google.com/forms/d/e/1FAIpQLSerXAJr_ARrHu06Ic_3Ef1w984wu-7mw68FEjNamHpBieQeQg/viewform" >Need a Stay?</NavigationItem>
       </NavigationRow>
     </nav>
   )
