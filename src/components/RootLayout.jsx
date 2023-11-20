@@ -67,7 +67,7 @@ function Header({
         <div className={`text-white hidden  ${expanded ? 'md:hidden' : 'flex'} font-display text-2xl md:flex gap-16`}>
           <Link href='/events'>Events</Link>
           <Link href='/workshop'>Workshop</Link>
-          <a href="/contact">Contact</a>
+          <Link href="/contact">Contact</Link>
           <Link href='https://docs.google.com/forms/d/e/1FAIpQLSerXAJr_ARrHu06Ic_3Ef1w984wu-7mw68FEjNamHpBieQeQg/viewform'>Need a Stay?</Link>
         </div>
         <div className="flex items-center gap-x-14">
