@@ -36,7 +36,8 @@ function Page() {
           price,
           venue,
           ticket_end_date,
-          register
+          register,
+          terms_and_conditions
         }`
             )
             .then((eventData) => {
@@ -114,6 +115,8 @@ function Page() {
                                     </h1>
                                     <div className="max-w-xl">
                                         <p className="mt-6">{data[0].details}</p>
+                                        <p className="mt-6">{data[0].terms_and_conditions}</p>
+
                                     </div>
                                 </div>
                                 <div className="mt-8 lg:col-span-2 col-span-1 border-t border-gray-300/10 pt-10 sm:col-span-4 font-satoshi">
