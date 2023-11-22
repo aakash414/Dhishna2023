@@ -84,7 +84,7 @@ function Page() {
 const filteredData = data.filter(workshop =>
   workshop.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
-  console.log(data)
+  // console.log(data)
   return (
     <div className='bg-black z-10'>
       <div className='mt-[100px] md:mx-auto md:mt-0'>

@@ -16,10 +16,10 @@ export function Slide8() {
               const rect = element.getBoundingClientRect();
               if (rect.top < window.innerHeight - 600  && rect.bottom >= 0) {
                   setAnimate(true)
-                  console.log("first")
+                //   console.log("first")
               } else {
                   setAnimate(false)
-                  console.log("test")
+                //   console.log("test")
               }
           }
       };

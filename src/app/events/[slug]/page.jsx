@@ -49,7 +49,7 @@ function Page() {
                 setData(filteredData);
                 // console.log("Received filtered data:", filteredData);
                 setLoading(false);
-                console.log("data",data)
+                // console.log("data",data)
 
             } else {
                 setLoading(true);
@@ -69,8 +69,8 @@ function Page() {
         slug = window.location.href.split('/').pop();
     },[])
 
-    console.log("slug",slug);
-    console.log("data",data)
+    // console.log("slug",slug);
+    // console.log("data",data)
         // useEffect(() => {
     //     // Fetch data of the event using the slug
     //     client

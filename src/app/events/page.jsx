@@ -15,7 +15,7 @@ function Page() {
     const fetchData = async () => {
       try {
         const result = await client.fetch(`*[_type == "events"]`);
-        console.log("Received data:", result);
+        // console.log("Received data:", result);
         setData(result);
         fetchcount--;
       } catch (error) {

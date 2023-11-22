@@ -8,7 +8,7 @@ const TextRevolve = () => {
     const t2 = React.useRef();
     const t3 = React.useRef();
     React.useEffect(() => {
-        console.log('executed')
+        // console.log('executed')
         t1.current = gsap.timeline()
         t2.current = gsap.timeline()
         t3.current = gsap.timeline()

@@ -33,7 +33,7 @@ import client from '../client';
 const builder = imageUrlBuilder(client);
 
 function urlFor(source) {
-    console.log("source",source)
+    // console.log("source",source)
   return builder.image(source);
 }
 
