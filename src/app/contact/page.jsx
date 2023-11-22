@@ -30,7 +30,7 @@ const ComingSoonCard = () => {
       </div>
       <div className="w-full font-display text-5xl font-medium tracking-tight text-white sm:w-1/2">
         <NavigationRow>
-          <NavigationItem phone="+91 858003324">Abhiram</NavigationItem>
+          <NavigationItem phone="+91 8589003324">Abhiram</NavigationItem>
           <NavigationItem phone="+91 9061071530">Acquin</NavigationItem>
         </NavigationRow>
         <h2 className="font-display text-xl p-8 font-semibold text-white">
