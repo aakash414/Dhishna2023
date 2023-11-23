@@ -68,6 +68,8 @@ function Header({
           <Link href='/events'>Events</Link>
           <Link href='/workshop'>Workshop</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="https://www.google.com/maps/d/u/0/edit?mid=1NEV2b72eeJaskro_FazhplLTLhJgKHU&usp=sharing">Event Map</Link>
+
           
         </div>
         <div className="flex items-center gap-x-14">
@@ -138,6 +140,8 @@ function Navigation() {
       </NavigationRow>
       <NavigationRow>
         <NavigationItem href="/contact" >Contact</NavigationItem>
+        <NavigationItem href="https://www.google.com/maps/d/u/0/edit?mid=1NEV2b72eeJaskro_FazhplLTLhJgKHU&usp=sharing" >Event Map</NavigationItem>
+
         
       </NavigationRow>
     </nav>
