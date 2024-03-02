@@ -1,3 +1,7 @@
+![image](https://github.com/aakash414/Dhishna2023/assets/67820270/a38849f9-8b8e-43d6-b8c3-899c7c98bc7e)
+
+
+
 # Studio
 
 Studio is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
